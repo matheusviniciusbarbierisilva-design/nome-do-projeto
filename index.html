@@ -3,104 +3,986 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ideal Store Roupas e Acessórios em Cambé, PR. Moda feminina e masculina, novidades e promoções imperdíveis.">
-    <title>Ideal Store Cambé | Moda Feminina e Masculina, Promoções</title>
+    <meta name="description" content="Ideal Store - Moda feminina e masculina em Cambé. Roupas, calçados e acessórios.">
+    <meta name="keywords" content="Ideal Store, moda, roupas, Cambé, loja, feminina, masculina, teen">
+    <meta name="author" content="Ideal Store">
+    <meta name="robots" content="index, follow">
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Ideal Store | Moda Feminina e Masculina em Cambé</title>
     
-    <link rel="stylesheet" href="ativos/css/style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ClothingStore",
+      "name": "Ideal Store",
+      "url": "https://www.idealstore.com.br",
+      "logo": "https://www.idealstore.com.br/assets/img/logo.png",
+      "image": "https://www.idealstore.com.br/assets/img/storefront.jpg",
+      "description": "Loja de moda feminina e masculina em Cambé, com roupas descoladas e cheias de personalidade.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Antônio Raminelli, 1444",
+        "addressLocality": "Cambé",
+        "addressRegion": "PR",
+        "postalCode": "86181-010",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -23.2756,
+        "longitude": -51.2746
+      },
+      "telephone": "+554396206966",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "09:00",
+          "closes": "13:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/idealstorecambe/",
+        "https://www.instagram.com/idealstorecambe/"
+      ]
+    }
+    </script>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.idealstore.com.br/">
+    <meta property="og:title" content="Ideal Store | Moda em Cambé">
+    <meta property="og:description" content="Roupas descoladas, confortáveis e cheias de personalidade para você.">
+    <meta property="og:image" content="https://www.idealstore.com.br/assets/img/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.idealstore.com.br/">
+    <meta property="twitter:title" content="Ideal Store | Moda em Cambé">
+    <meta property="twitter:description" content="Roupas descoladas, confortáveis e cheias de personalidade para você.">
+    <meta property="twitter:image" content="https://www.idealstore.com.br/assets/img/twitter-image.jpg">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
 
-    <header class="main-header">
-        <div class="container header-content">
-            <a href="index.html" class="logo" aria-label="Página Inicial da Ideal Store">Ideal Store</a>
-            
-            <nav id="nav-menu" class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="#promocoes">Promoções</a></li>
-                    <li><a href="catalogo.html">Catálogo</a></li>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-            <button class="menu-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir e Fechar Menu">
-                <i class="fas fa-bars"></i>
-            </button>
+    <!-- Topo da Página - Info e Redes Sociais -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-contact">
+                    <a href="mailto:amanda.silva_26@outlook.com"><i class="fas fa-envelope"></i> amanda.silva_26@outlook.com</a>
+                    <a href="tel:+554396206966"><i class="fas fa-phone"></i> (43) 99620-6966</a>
+                </div>
+                <div class="top-social">
+                    <span>Siga-nos:</span>
+                    <a href="https://www.facebook.com/idealstorecambe/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/idealstorecambe/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/554396206966" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/img/logo.png" alt="Ideal Store Logo" class="logo-img">
+                        <h1>Ideal Store</h1>
+                    </a>
+                </div>
+                
+                <div class="header-right">
+                    <nav class="main-nav">
+                        <ul class="menu">
+                            <li class="menu-item"><a href="index.html" class="active">Início</a></li>
+                            <li class="menu-item dropdown">
+                                <a href="colecoes.html">Coleções <i class="fas fa-chevron-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="colecoes.html#primavera">Primavera/Verão</a></li>
+                                    <li><a href="colecoes.html#outono">Outono/Inverno</a></li>
+                                    <li><a href="colecoes.html#casual">Casual</a></li>
+                                    <li><a href="colecoes.html#festas">Festas</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item dropdown">
+                                <a href="produtos.html">Produtos <i class="fas fa-chevron-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="produtos.html?categoria=feminino">Feminino</a></li>
+                                    <li><a href="produtos.html?categoria=masculino">Masculino</a></li>
+                                    <li><a href="produtos.html?categoria=teen">Teen</a></li>
+                                    <li><a href="produtos.html?categoria=acessorios">Acessórios</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a href="novidades.html">Novidades</a></li>
+                            <li class="menu-item"><a href="sobre.html">Sobre Nós</a></li>
+                            <li class="menu-item"><a href="contato.html">Contato</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-actions">
+                        <div class="action-btn search-toggle">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="action-btn">
+                            <a href="favoritos.html" aria-label="Favoritos">
+                                <i class="fas fa-heart"></i>
+                                <span class="count">0</span>
+                            </a>
+                        </div>
+                        <div class="action-btn">
+                            <a href="carrinho.html" aria-label="Carrinho de Compras">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span class="count">0</span>
+                            </a>
+                        </div>
+                        <div class="action-btn user-account">
+                            <a href="#" aria-label="Minha Conta">
+                                <i class="fas fa-user"></i>
+                            </a>
+                            <div class="account-dropdown">
+                                <ul>
+                                    <li><a href="login.html">Entrar</a></li>
+                                    <li><a href="cadastro.html">Cadastrar</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="mobile-menu-toggle" aria-label="Menu Principal">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search Overlay -->
+        <div class="search-overlay">
+            <div class="container">
+                <form class="search-form" action="pesquisa.html" method="get">
+                    <input type="text" name="q" placeholder="O que você procura?">
+                    <button type="submit" aria-label="Buscar"><i class="fas fa-search"></i></button>
+                </form>
+                <button class="close-search" aria-label="Fechar Busca"><i class="fas fa-times"></i></button>
+            </div>
         </div>
     </header>
-
-    <main>
-        <section id="hero" class="hero-section" role="banner">
-            <div class="container hero-content">
-                <h1>Moda com Atitude em Cambé, PR.</h1>
-                <p>Encontre o look perfeito para qualquer ocasião.</p>
-                <a href="#promocoes" class="btn-primary">Ver Ofertas Especiais</a>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="close-mobile-menu">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="mobile-menu-inner">
+            <div class="mobile-search">
+                <form action="pesquisa.html" method="get">
+                    <input type="text" name="q" placeholder="Buscar...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
             </div>
-        </section>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">Coleções <i class="fas fa-chevron-down"></i></a>
+                        <ul class="mobile-submenu">
+                            <li><a href="colecoes.html#primavera">Primavera/Verão</a></li>
+                            <li><a href="colecoes.html#outono">Outono/Inverno</a></li>
+                            <li><a href="colecoes.html#casual">Casual</a></li>
+                            <li><a href="colecoes.html#festas">Festas</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#">Produtos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="mobile-submenu">
+                            <li><a href="produtos.html?categoria=feminino">Feminino</a></li>
+                            <li><a href="produtos.html?categoria=masculino">Masculino</a></li>
+                            <li><a href="produtos.html?categoria=teen">Teen</a></li>
+                            <li><a href="produtos.html?categoria=acessorios">Acessórios</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="novidades.html">Novidades</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-contact">
+                <p><i class="fas fa-map-marker-alt"></i> Av. Antônio Raminelli, 1444 - Cambé/PR</p>
+                <p><i class="fas fa-phone"></i> (43) 99620-6966</p>
+                <p><i class="fas fa-envelope"></i> amanda.silva_26@outlook.com</p>
+            </div>
+            <div class="mobile-social">
+                <a href="https://www.facebook.com/idealstorecambe/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/idealstorecambe/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/554396206966" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
 
-        <section id="promocoes" class="section-padded">
-            <div class="container">
-                <h2 class="section-title">✨ Promoções da Semana</h2>
-                <div class="product-grid" id="promocoes-container">
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+        <div class="owl-carousel hero-carousel">
+            <div class="hero-slide slide-1">
+                <div class="slide-content">
+                    <h2 data-aos="fade-up" data-aos-delay="100">Nova Coleção</h2>
+                    <h3 data-aos="fade-up" data-aos-delay="300">Primavera/Verão</h3>
+                    <p data-aos="fade-up" data-aos-delay="500">Estilo que fala por você! Roupas descoladas, confortáveis e cheias de personalidade.</p>
+                    <div class="slide-buttons" data-aos="fade-up" data-aos-delay="700">
+                        <a href="produtos.html?categoria=novidades" class="btn btn-primary">Explorar Coleção</a>
+                        <a href="sobre.html" class="btn btn-outline">Saiba Mais</a>
+                    </div>
                 </div>
-                <p class="callout">Aproveite! Ofertas válidas enquanto durarem os estoques.</p>
             </div>
-        </section>
-
-        <section id="produtos" class="section-light">
-            <div class="container">
-                <h2 class="section-title">Novidades em Destaque</h2>
-                <div class="product-grid" id="produtos-container">
+            <div class="hero-slide slide-2">
+                <div class="slide-content">
+                    <h2 data-aos="fade-up" data-aos-delay="100">Estilo Teen</h2>
+                    <h3 data-aos="fade-up" data-aos-delay="300">Roupas com Atitude</h3>
+                    <p data-aos="fade-up" data-aos-delay="500">Moda jovem com personalidade para todos os momentos.</p>
+                    <div class="slide-buttons" data-aos="fade-up" data-aos-delay="700">
+                        <a href="produtos.html?categoria=teen" class="btn btn-primary">Ver Coleção</a>
+                        <a href="sobre.html" class="btn btn-outline">Saiba Mais</a>
+                    </div>
                 </div>
-                <a href="catalogo.html" class="btn-secondary">Ver Todo o Catálogo</a>
             </div>
-        </section>
+            <div class="hero-slide slide-3">
+                <div class="slide-content">
+                    <h2 data-aos="fade-up" data-aos-delay="100">Promoção Especial</h2>
+                    <h3 data-aos="fade-up" data-aos-delay="300">Até 40% OFF</h3>
+                    <p data-aos="fade-up" data-aos-delay="500">Aproveite descontos especiais em peças selecionadas.</p>
+                    <div class="slide-buttons" data-aos="fade-up" data-aos-delay="700">
+                        <a href="produtos.html?categoria=promocoes" class="btn btn-primary">Ver Ofertas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <div class="slider-prev"><i class="fas fa-chevron-left"></i></div>
+            <div class="slider-next"><i class="fas fa-chevron-right"></i></div>
+        </div>
+    </section>
 
-        <section id="redes" class="section-padded call-to-action">
-            <div class="container">
-                <h2 class="section-title">Siga nosso Instagram!</h2>
-                <p>Receba dicas de moda, bastidores e seja o primeiro a ver os lançamentos.</p>
-                <a href="https://instagram.com/idealstorecambe" target="_blank" class="btn-instagram">
-                    <i class="fab fa-instagram"></i> @idealstorecambe
+    <!-- Categorias Destaques -->
+    <section class="categorias-destaque section-padding">
+        <div class="container">
+            <div class="section-heading" data-aos="fade-up">
+                <h4 class="sub-heading">Explore Nossa Seleção</h4>
+                <h2 class="main-heading">Categorias em Destaque</h2>
+            </div>
+            <div class="categorias-grid">
+                <div class="categoria-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="categoria-image">
+                        <img src="assets/img/categoria-feminino.jpg" alt="Moda Feminina">
+                        <div class="categoria-overlay">
+                            <h3>Feminino</h3>
+                            <a href="produtos.html?categoria=feminino" class="btn-categoria">Explorar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="categoria-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="categoria-image">
+                        <img src="assets/img/categoria-masculino.jpg" alt="Moda Masculina">
+                        <div class="categoria-overlay">
+                            <h3>Masculino</h3>
+                            <a href="produtos.html?categoria=masculino" class="btn-categoria">Explorar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="categoria-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="categoria-image">
+                        <img src="assets/img/categoria-teen.jpg" alt="Moda Teen">
+                        <div class="categoria-overlay">
+                            <h3>Teen</h3>
+                            <a href="produtos.html?categoria=teen" class="btn-categoria">Explorar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="categoria-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="categoria-image">
+                        <img src="assets/img/categoria-acessorios.jpg" alt="Acessórios">
+                        <div class="categoria-overlay">
+                            <h3>Acessórios</h3>
+                            <a href="produtos.html?categoria=acessorios" class="btn-categoria">Explorar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos em Destaque -->
+    <section class="produtos-destaque section-padding bg-light">
+        <div class="container">
+            <div class="section-heading" data-aos="fade-up">
+                <h4 class="sub-heading">Nossa Seleção Especial</h4>
+                <h2 class="main-heading">Produtos em Destaque</h2>
+            </div>
+            
+            <div class="produto-tabs" data-aos="fade-up">
+                <ul class="tab-nav">
+                    <li class="active" data-tab="novidades">Novidades</li>
+                    <li data-tab="populares">Mais Populares</li>
+                    <li data-tab="ofertas">Ofertas</li>
+                </ul>
+            </div>
+            
+            <div class="tab-content">
+                <div id="novidades" class="tab-pane active">
+                    <div class="produtos-carousel owl-carousel">
+                        <!-- Produto 1 -->
+                        <div class="produto-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="produto-thumb">
+                                <span class="badge new">Novo</span>
+                                <img src="assets/img/produtos/produto-1.jpg" alt="Blusa Manga Longa">
+                                <div class="produto-actions">
+                                    <a href="#" class="add-to-wishlist" data-toggle="tooltip" title="Adicionar aos Favoritos"><i class="far fa-heart"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="tooltip" title="Visualização Rápida"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="add-to-cart" data-toggle="tooltip" title="Adicionar ao Carrinho"><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                            <div class="produto-info">
+                                <h3 class="produto-nome"><a href="produto-detalhes.html?id=1">Blusa Manga Longa Feminina</a></h3>
+                                <div class="produto-preco">
+                                    <span class="preco-atual">R$ 89,90</span>
+                                </div>
+                                <div class="produto-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(24)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produto 2 -->
+                        <div class="produto-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="produto-thumb">
+                                <span class="badge new">Novo</span>
+                                <img src="assets/img/produtos/produto-2.jpg" alt="Calça Jeans">
+                                <div class="produto-actions">
+                                    <a href="#" class="add-to-wishlist" data-toggle="tooltip" title="Adicionar aos Favoritos"><i class="far fa-heart"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="tooltip" title="Visualização Rápida"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="add-to-cart" data-toggle="tooltip" title="Adicionar ao Carrinho"><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                            <div class="produto-info">
+                                <h3 class="produto-nome"><a href="produto-detalhes.html?id=2">Calça Jeans Masculina Slim</a></h3>
+                                <div class="produto-preco">
+                                    <span class="preco-atual">R$ 129,90</span>
+                                </div>
+                                <div class="produto-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(18)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produto 3 -->
+                        <div class="produto-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="produto-thumb">
+                                <span class="badge new">Novo</span>
+                                <img src="assets/img/produtos/produto-3.jpg" alt="Vestido Estampado">
+                                <div class="produto-actions">
+                                    <a href="#" class="add-to-wishlist" data-toggle="tooltip" title="Adicionar aos Favoritos"><i class="far fa-heart"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="tooltip" title="Visualização Rápida"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="add-to-cart" data-toggle="tooltip" title="Adicionar ao Carrinho"><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                            <div class="produto-info">
+                                <h3 class="produto-nome"><a href="produto-detalhes.html?id=3">Vestido Estampado Floral</a></h3>
+                                <div class="produto-preco">
+                                    <span class="preco-atual">R$ 119,90</span>
+                                </div>
+                                <div class="produto-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(32)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produto 4 -->
+                        <div class="produto-card" data-aos="fade-up" data-aos-delay="400">
+                            <div class="produto-thumb">
+                                <span class="badge new">Novo</span>
+                                <img src="assets/img/produtos/produto-4.jpg" alt="Camisa Social">
+                                <div class="produto-actions">
+                                    <a href="#" class="add-to-wishlist" data-toggle="tooltip" title="Adicionar aos Favoritos"><i class="far fa-heart"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="tooltip" title="Visualização Rápida"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="add-to-cart" data-toggle="tooltip" title="Adicionar ao Carrinho"><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                            <div class="produto-info">
+                                <h3 class="produto-nome"><a href="produto-detalhes.html?id=4">Camisa Social Masculina</a></h3>
+                                <div class="produto-preco">
+                                    <span class="preco-atual">R$ 99,90</span>
+                                </div>
+                                <div class="produto-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(12)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produto 5 -->
+                        <div class="produto-card" data-aos="fade-up" data-aos-delay="500">
+                            <div class="produto-thumb">
+                                <span class="badge new">Novo</span>
+                                <img src="assets/img/produtos/produto-5.jpg" alt="Jaqueta Jeans">
+                                <div class="produto-actions">
+                                    <a href="#" class="add-to-wishlist" data-toggle="tooltip" title="Adicionar aos Favoritos"><i class="far fa-heart"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="tooltip" title="Visualização Rápida"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="add-to-cart" data-toggle="tooltip" title="Adicionar ao Carrinho"><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                            <div class="produto-info">
+                                <h3 class="produto-nome"><a href="produto-detalhes.html?id=5">Jaqueta Jeans Feminina</a></h3>
+                                <div class="produto-preco">
+                                    <span class="preco-atual">R$ 159,90</span>
+                                </div>
+                                <div class="produto-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(27)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="populares" class="tab-pane">
+                    <div class="produtos-carousel owl-carousel">
+                        <!-- Produtos populares aqui -->
+                        <!-- Conteúdo similar ao tab de novidades -->
+                    </div>
+                </div>
+                
+                <div id="ofertas" class="tab-pane">
+                    <div class="produtos-carousel owl-carousel">
+                        <!-- Produtos em oferta aqui -->
+                        <!-- Conteúdo similar ao tab de novidades -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-50" data-aos="fade-up">
+                <a href="produtos.html" class="btn btn-primary">Ver Todos os Produtos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Promocional -->
+    <section class="banner-promocional parallax-section">
+        <div class="container">
+            <div class="promo-content" data-aos="fade-up">
+                <h4>Oferta Especial</h4>
+                <h2>40% OFF em Toda Coleção de Verão</h2>
+                <p>Use o cupom <strong>VERAO40</strong> e aproveite!</p>
+                <a href="produtos.html?categoria=promocoes" class="btn btn-white">Comprar Agora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog e Novidades -->
+    <section class="blog-section section-padding">
+        <div class="container">
+            <div class="section-heading" data-aos="fade-up">
+                <h4 class="sub-heading">Fique por Dentro</h4>
+                <h2 class="main-heading">Blog e Novidades</h2>
+            </div>
+            
+            <div class="blog-grid">
+                <div class="blog-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-thumb">
+                        <a href="blog-post.html">
+                            <img src="assets/img/blog/post-1.jpg" alt="Tendências para a Primavera">
+                            <div class="post-date">
+                                <span class="day">15</span>
+                                <span class="month">Nov</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-user"></i> Admin</span>
+                            <span><i class="far fa-comments"></i> 3 Comentários</span>
+                        </div>
+                        <h3><a href="blog-post.html">10 Tendências Imperdíveis para a Primavera 2026</a></h3>
+                        <p>Descubra as cores, estampas e modelos que estarão em alta na próxima estação.</p>
+                        <a href="blog-post.html" class="read-more">Continuar Lendo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-thumb">
+                        <a href="blog-post.html">
+                            <img src="assets/img/blog/post-2.jpg" alt="Moda Sustentável">
+                            <div class="post-date">
+                                <span class="day">08</span>
+                                <span class="month">Nov</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-user"></i> Admin</span>
+                            <span><i class="far fa-comments"></i> 7 Comentários</span>
+                        </div>
+                        <h3><a href="blog-post.html">Moda Sustentável: Como Montar um Guarda-Roupa Consciente</a></h3>
+                        <p>Dicas para escolher peças com mais consciência e reduzir o impacto ambiental.</p>
+                        <a href="blog-post.html" class="read-more">Continuar Lendo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-thumb">
+                        <a href="blog-post.html">
+                            <img src="assets/img/blog/post-3.jpg" alt="Acessórios em Alta">
+                            <div class="post-date">
+                                <span class="day">02</span>
+                                <span class="month">Nov</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-user"></i> Admin</span>
+                            <span><i class="far fa-comments"></i> 5 Comentários</span>
+                        </div>
+                        <h3><a href="blog-post.html">Acessórios que Transformam Qualquer Look Básico</a></h3>
+                        <p>Como elevar seu visual com os acessórios certos para cada ocasião.</p>
+                        <a href="blog-post.html" class="read-more">Continuar Lendo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-50" data-aos="fade-up">
+                <a href="blog.html" class="btn btn-outline">Ver Todos os Posts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section class="instagram-section">
+        <div class="section-heading text-center" data-aos="fade-up">
+            <h4 class="sub-heading">Inspiração</h4>
+            <h2 class="main-heading">Siga-nos no Instagram</h2>
+            <a href="https://www.instagram.com/idealstorecambe/" class="instagram-link" target="_blank">@idealstorecambe</a>
+        </div>
+        
+        <div class="instagram-gallery" data-aos="fade-up">
+            <div class="instagram-item">
+                <a href="https://www.instagram.com/p/XYZ123/" target="_blank">
+                    <img src="assets/img/instagram/insta-1.jpg" alt="Instagram Post">
+                    <div class="insta-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
                 </a>
             </div>
-        </section>
+            <div class="instagram-item">
+                <a href="https://www.instagram.com/p/XYZ124/" target="_blank">
+                    <img src="assets/img/instagram/insta-2.jpg" alt="Instagram Post">
+                    <div class="insta-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="instagram-item">
+                <a href="https://www.instagram.com/p/XYZ125/" target="_blank">
+                    <img src="assets/img/instagram/insta-3.jpg" alt="Instagram Post">
+                    <div class="insta-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="instagram-item">
+                <a href="https://www.instagram.com/p/XYZ126/" target="_blank">
+                    <img src="assets/img/instagram/insta-4.jpg" alt="Instagram Post">
+                    <div class="insta-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="instagram-item">
+                <a href="https://www.instagram.com/p/XYZ127/" target="_blank">
+                    <img src="assets/img/instagram/insta-5.jpg" alt="Instagram Post">
+                    <div class="insta-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="instagram-item">
+                <a href="https://www.instagram.com/p/XYZ128/" target="_blank">
+                    <img src="assets/img/instagram/insta-6.jpg" alt="Instagram Post">
+                    <div class="insta-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-        <section id="contato" class="section-padded section-light">
-            <div class="container contato-grid">
-                <div>
-                    <h2 class="section-title">Onde Estamos?</h2>
-                    <p>Venha nos visitar em Cambé e confira as peças pessoalmente!</p>
-                    <address class="store-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Av. Antonio Raminelli, 1444 - Cambé, PR</p>
-                        <p><i class="fas fa-phone"></i> (43) 99612-6966</p>
-                        <p><i class="fas fa-envelope"></i> contato@idealstore.com</p>
-                    </address>
+    <!-- Nossas Vantagens -->
+    <section class="vantagens-section section-padding">
+        <div class="container">
+            <div class="vantagens-grid">
+                <div class="vantagem-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="vantagem-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="vantagem-content">
+                        <h3>Entrega Rápida</h3>
+                        <p>Receba seus produtos em até 2 dias úteis na região de Cambé.</p>
+                    </div>
                 </div>
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.926224329243!2d-51.24832598495098!3d-23.2798830848386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb41f7e02b6e1f%3A0x6b4f74a3f1b4c9e!2sAv.%20Ant%C3%B4nio%20Raminelli%2C%201444%20-%20Camb%C3%A9%2C%20PR%2C%2086185-000!5e0!3m2!1spt-BR!2sbr!4v1678893456789!5m2!1spt-BR!2sbr" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        aria-label="Localização da Ideal Store no Google Maps">
-                    </iframe>
+                
+                <div class="vantagem-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="vantagem-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="vantagem-content">
+                        <h3>Pagamento Seguro</h3>
+                        <p>Diversas formas de pagamento com total segurança.</p>
+                    </div>
+                </div>
+                
+                <div class="vantagem-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="vantagem-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="vantagem-content">
+                        <h3>Troca Gratuita</h3>
+                        <p>15 dias para trocar ou devolver sem custos adicionais.</p>
+                    </div>
+                </div>
+                
+                <div class="vantagem-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="vantagem-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="vantagem-content">
+                        <h3>Suporte 24/7</h3>
+                        <p>Atendimento online para dúvidas e suporte.</p>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="main-footer">
-        <div class="container footer-content">
-            <p>© 2025 Ideal Store Roupas e Acessórios. Todos os direitos reservados.</p>
-            <div class="social-links">
-                <a href="https://wa.me/5543996126966" target="_blank" aria-label="WhatsApp da Loja"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com/idealstorecambe" target="_blank" aria-label="Instagram da Loja"><i class="fab fa-instagram"></i></a>
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-box" data-aos="fade-up">
+                <div class="newsletter-content">
+                    <h3>Inscreva-se em nossa Newsletter</h3>
+                    <p>Receba novidades, promoções exclusivas e cupons de desconto diretamente no seu e-mail.</p>
+                </div>
+                <div class="newsletter-form">
+                    <form id="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" id="newsletter-email" placeholder="Seu melhor e-mail" required>
+                            <button type="submit" class="btn btn-primary">Inscrever-se</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-widgets">
+                    <div class="footer-widget about-widget">
+                        <div class="footer-logo">
+                            <img src="assets/img/logo-white.png" alt="Ideal Store Logo">
+                            <h2>Ideal Store</h2>
+                        </div>
+                        <p>Loja de moda feminina e masculina em Cambé, com roupas descoladas, confortáveis e cheias de personalidade.</p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/idealstorecambe/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/idealstorecambe/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/554396206966" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-widget links-widget">
+                        <h4 class="widget-title">Compras</h4>
+                        <ul class="footer-links">
+                            <li><a href="produtos.html?categoria=feminino">Moda Feminina</a></li>
+                            <li><a href="produtos.html?categoria=masculino">Moda Masculina</a></li>
+                            <li><a href="produtos.html?categoria=teen">Moda Teen</a></li>
+                            <li><a href="produtos.html?categoria=acessorios">Acessórios</a></li>
+                            <li><a href="produtos.html?categoria=promocoes">Ofertas</a></li>
+                            <li><a href="produtos.html?categoria=novidades">Novidades</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-widget links-widget">
+                        <h4 class="widget-title">Informações</h4>
+                        <ul class="footer-links">
+                            <li><a href="sobre.html">Sobre Nós</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="perguntas-frequentes.html">Perguntas Frequentes</a></li>
+                            <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                            <li><a href="termos-condicoes.html">Termos e Condições</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-widget contact-widget">
+                        <h4 class="widget-title">Contato</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="text">
+                                    <h5>Loja 1</h5>
+                                    <p>Av. Antônio Raminelli, 1444 - Cambé, PR</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="text">
+                                    <h5>Loja 2</h5>
+                                    <p>Av. Brasil, 963 - Galeria Supermercado Amigão - Cambé, PR</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                                <div class="text">
+                                    <p>(43) 99620-6966</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon"><i class="fas fa-envelope"></i></div>
+                                <div class="text">
+                                    <p>amanda.silva_26@outlook.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon"><i class="fas fa-clock"></i></div>
+                                <div class="text">
+                                    <p>Seg - Sex: 09:00 - 18:00</p>
+                                    <p>Sáb: 09:00 - 13:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2025 Ideal Store - Todos os direitos reservados</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Formas de Pagamento:</span>
+                        <img src="assets/img/payment-methods.png" alt="Métodos de Pagamento">
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="ativos/js/script.js"></script> </body>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Voltar ao Topo"><i class="fas fa-chevron-up"></i></a>
+
+    <!-- Modal de Visualização Rápida -->
+    <div class="quick-view-modal" id="quickViewModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="product-quick-view">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="product-image">
+                            <img src="assets/img/produtos/produto-1.jpg" alt="Produto" id="quick-view-image">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="product-details">
+                            <h2 id="quick-view-title">Nome do Produto</h2>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(24 avaliações)</span>
+                            </div>
+                            <div class="price">
+                                <span class="current" id="quick-view-price">R$ 89,90</span>
+                            </div>
+                            <div class="description">
+                                <p id="quick-view-description">Descrição do produto será exibida aqui com detalhes sobre o material, estilo e outras características relevantes.</p>
+                            </div>
+                            <div class="product-variations">
+                                <div class="size-selector">
+                                    <h4>Tamanho:</h4>
+                                    <div class="sizes">
+                                        <button class="size-btn">P</button>
+                                        <button class="size-btn">M</button>
+                                        <button class="size-btn">G</button>
+                                        <button class="size-btn">GG</button>
+                                    </div>
+                                </div>
+                                <div class="color-selector">
+                                    <h4>Cor:</h4>
+                                    <div class="colors">
+                                        <button class="color-btn" style="background-color: #000;"></button>
+                                        <button class="color-btn" style="background-color: #2196f3;"></button>
+                                        <button class="color-btn" style="background-color: #f44336;"></button>
+                                        <button class="color-btn" style="background-color: #4caf50;"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-actions">
+                                <div class="quantity">
+                                    <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                    <input type="number" name="quantity" value="1" min="1" class="qty-input">
+                                    <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                                <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</button>
+                                <button class="btn btn-outline wishlist"><i class="far fa-heart"></i> Favoritos</button>
+                            </div>
+                            <div class="product-meta">
+                                <p><strong>Categorias:</strong> <a href="#" id="quick-view-category">Feminino</a></p>
+                                <p><strong>Tags:</strong> <a href="#">moda</a>, <a href="#">estilo</a>, <a href="#">casual</a></p>
+                                <p><strong>Código do Produto:</strong> <span id="quick-view-sku">IS-1234</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Consent -->
+    <div class="cookie-consent">
+        <div class="container">
+            <div class="cookie-content">
+                <p>Utilizamos cookies para melhorar sua experiência em nosso site. Ao continuar navegando, você concorda com a nossa <a href="politica-privacidade.html">Política de Privacidade</a>.</p>
+                <div class="cookie-buttons">
+                    <button class="btn btn-white" id="cookie-accept">Aceitar</button>
+                    <button class="btn btn-outline-white" id="cookie-settings">Configurações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Popup -->
+    <div class="newsletter-popup">
+        <div class="popup-content">
+            <button class="close-popup"><i class="fas fa-times"></i></button>
+            <div class="popup-image">
+                <img src="assets/img/newsletter-popup.jpg" alt="Newsletter">
+            </div>
+            <div class="popup-form">
+                <h3>Ganhe 10% OFF</h3>
+                <p>Inscreva-se em nossa newsletter e ganhe 10% de desconto na primeira compra!</p>
+                <form id="popup-newsletter-form">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit" class="btn btn-primary">Quero Receber</button>
+                </form>
+                <div class="popup-checkbox">
+                    <input type="checkbox" id="dont-show-again">
+                    <label for="dont-show-again">Não mostrar novamente</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="notification-toast">
+        <div class="toast-content">
+            <div class="toast-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="toast-message">
+                Produto adicionado ao carrinho!
+            </div>
+        </div>
+        <div class="toast-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="toast-progress"></div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    
+    <!-- AOS - Animate On Scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Owl Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <!-- Lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
 </html>
