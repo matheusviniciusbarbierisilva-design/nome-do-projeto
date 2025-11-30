@@ -3,22 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site no GitHub</title>
+    <title>Ideal Store - Moda Premium</title>
+
     <style>
         body {
-            font-family: Arial;
-            background-color: #111;
-            color: #fff;
-            text-align: center;
-            margin-top: 80px;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background: #f5f5f5;
         }
-        h1 {
-            color: #00ff88;
+
+        /* HEADER */
+        header {
+            background: #111;
+            color: #fff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #ffcf33;
+        }
+
+        /* BANNER */
+        .banner {
+            width: 100%;
+            height: 350px;
+            background: url('https://i.imgur.com/2yaf2H5.jpeg') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 0px 0px 15px #000;
+            font-size: 38px;
+            font-weight: bold;
+        }
+
+        /* PRODUTOS */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .titulo {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .card .info {
+            padding: 15px;
+        }
+
+        .card .info h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .card .info p {
+            margin: 5px 0 0;
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: #ccc;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
         }
     </style>
 </head>
+
 <body>
-    <h1>Site Funcionando! 🚀</h1>
-    <p>Meu primeiro site no GitHub Pages 😎</p>
+
+    <header>
+        <h1>IDEAL STORE</h1>
+
+        <nav>
+            <a href="#">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <div class="banner">
+        Nova Coleção 2025
+    </div>
+
+    <div class="container" id="produtos">
+        <h2 class="titulo">Destaques da Loja</h2>
+
+        <div class="produtos">
+
+            <div class="card">
+                <img src="https://i.imgur.com/MnQ1M6e.jpeg">
+                <div class="info">
+                    <h3>Camiseta Premium</h3>
+                    <p>R$ 79,90</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://i.imgur.com/Hb6JH3Y.jpeg">
+                <div class="info">
+                    <h3>Jaqueta Streetwear</h3>
+                    <p>R$ 189,90</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://i.imgur.com/buC5J35.jpeg">
+                <div class="info">
+                    <h3>Moletom Oversized</h3>
+                    <p>R$ 149,90</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://i.imgur.com/3dXGJEM.jpeg">
+                <div class="info">
+                    <h3>Calça Cargo Masculina</h3>
+                    <p>R$ 129,90</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer id="contato">
+        © 2025 Ideal Store — Todos os direitos reservados.
+    </footer>
+
 </body>
 </html>
