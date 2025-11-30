@@ -50,7 +50,7 @@ ascript
         // Simular carregamento da página
         setTimeout(function() {
             $('.preloader').fadeOut(300);
-        }, 800);
+        }, 300);
 
         // Ou usar o evento load
         $window.on('load', function() {
