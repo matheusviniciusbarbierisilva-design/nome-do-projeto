@@ -1,7 +1,7 @@
 /* Variáveis de Cores */
 :root {
-    --primary-color: #A3294E; /* Cor principal (Bordô/Vinho) */
-    --secondary-color: #CE4760; /* Cor de destaque */
+    --primary-color: #A3294E;
+    --secondary-color: #CE4760;
     --text-dark: #333333;
     --text-light: #f5f5f5;
     --bg-light: #ffffff;
@@ -79,7 +79,7 @@ body {
 }
 
 .btn-instagram {
-    background-color: #C13584; /* Cor do Instagram */
+    background-color: #C13584;
     color: white;
 }
 
@@ -139,7 +139,8 @@ body {
 
 /* --- SEÇÃO HERO --- */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero_background_placeholder.jpg') no-repeat center center/cover;
+    /* CORRIGIDO: Voltando dois níveis (../ para sair de css, e mais ../ para sair de ativos) */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../images/hero_background_placeholder.jpg') no-repeat center center/cover;
     height: 450px;
     display: flex;
     align-items: center;
@@ -362,7 +363,7 @@ body {
     max-width: 100%;
 }
 
-/* --- RESPONSIVIDADE (MOBILE) - CORRIGIDA */
+/* --- RESPONSIVIDADE (MOBILE) - SINTAXE CORRIGIDA */
 @media (max-width: 768px) {
     .header-content {
         padding: 10px 0;
@@ -417,7 +418,7 @@ body {
     }
 }
 
-/* CORREÇÃO DO BLOCO DE FILTRO MOBILE (Sintaxe em Inglês) */
+/* CORREÇÃO DO BLOCO DE FILTRO MOBILE */
 @media (max-width: 600px) {
     .filter-bar {
         flex-direction: column;
