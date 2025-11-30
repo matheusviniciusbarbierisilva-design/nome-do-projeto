@@ -10,5 +10,5 @@ document.addEventListener("DOMContentLoaded", () => {
     slides[current].classList.add("active");
   }
 
-  setInterval(nextSlide, 5000); // troca a cada 5 segundos
+  setInterval(nextSlide, 5000);
 });
