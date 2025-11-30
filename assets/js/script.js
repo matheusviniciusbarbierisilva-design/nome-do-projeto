@@ -2,7 +2,7 @@ ascript
 /*
 * Ideal Store - Main JS
 * Versão: 1.0.0
-* Autor: Desenvolvedor
+* Autor: Matheus Vinicius
 * Website: www.idealstore.com.br
 */
 
