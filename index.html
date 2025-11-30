@@ -3,186 +3,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ideal Store - Moda Premium</title>
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Poppins", Arial, sans-serif;
-            background: #f5f5f5;
-        }
-
-        /* HEADER */
-        header {
-            background: #111;
-            color: #fff;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 16px;
-        }
-
-        nav a:hover {
-            color: #ffcf33;
-        }
-
-        /* BANNER */
-        .banner {
-            width: 100%;
-            height: 350px;
-            background: url('https://i.imgur.com/2yaf2H5.jpeg') center/cover no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 0px 0px 15px #000;
-            font-size: 38px;
-            font-weight: bold;
-        }
-
-        /* PRODUTOS */
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .titulo {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-
-        .produtos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
-            transition: .3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-        }
-
-        .card .info {
-            padding: 15px;
-        }
-
-        .card .info h3 {
-            margin: 0;
-            font-size: 18px;
-        }
-
-        .card .info p {
-            margin: 5px 0 0;
-            font-size: 16px;
-            color: #333;
-            font-weight: bold;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #111;
-            color: #ccc;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-            font-size: 14px;
-        }
-    </style>
+    <title>Ideal Store - Moda Masculina & Feminina</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>IDEAL STORE</h1>
+<header class="navbar">
+    <h1 class="logo">IDEAL STORE</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
 
-        <nav>
-            <a href="#">Início</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
+<section class="hero">
+    <h2>Moda que combina com você</h2>
+    <p>Qualidade premium, conforto e estilo para todas as ocasiões.</p>
+    <a class="btn" href="produtos.html">Ver Produtos</a>
+</section>
 
-    <div class="banner">
-        Nova Coleção 2025
-    </div>
+<section class="produtos-destaque">
+    <h2>Destaques</h2>
 
-    <div class="container" id="produtos">
-        <h2 class="titulo">Destaques da Loja</h2>
+    <div class="grid">
+        <div class="produto">
+            <img src="https://via.placeholder.com/300x350" />
+            <h3>Camiseta Premium</h3>
+            <p>R$ 79,90</p>
+        </div>
 
-        <div class="produtos">
+        <div class="produto">
+            <img src="https://via.placeholder.com/300x350" />
+            <h3>Calça Confort</h3>
+            <p>R$ 129,90</p>
+        </div>
 
-            <div class="card">
-                <img src="https://i.imgur.com/MnQ1M6e.jpeg">
-                <div class="info">
-                    <h3>Camiseta Premium</h3>
-                    <p>R$ 79,90</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://i.imgur.com/Hb6JH3Y.jpeg">
-                <div class="info">
-                    <h3>Jaqueta Streetwear</h3>
-                    <p>R$ 189,90</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://i.imgur.com/buC5J35.jpeg">
-                <div class="info">
-                    <h3>Moletom Oversized</h3>
-                    <p>R$ 149,90</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://i.imgur.com/3dXGJEM.jpeg">
-                <div class="info">
-                    <h3>Calça Cargo Masculina</h3>
-                    <p>R$ 129,90</p>
-                </div>
-            </div>
-
+        <div class="produto">
+            <img src="https://via.placeholder.com/300x350" />
+            <h3>Jaqueta Urban</h3>
+            <p>R$ 199,90</p>
         </div>
     </div>
+</section>
 
-    <footer id="contato">
-        © 2025 Ideal Store — Todos os direitos reservados.
-    </footer>
+<footer>
+    <p>Ideal Store © 2025 — Todos os direitos reservados</p>
+    <a href="sobre.html">Sobre nós</a> • 
+    <a href="politica.html">Política de Privacidade</a> •
+    <a href="contato.html">Contato</a>
+</footer>
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Ideal Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <h1 class="logo">IDEAL STORE</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<h2 class="titulo">Todos os Produtos</h2>
+
+<div class="grid">
+
+    <div class="produto">
+        <img src="https://via.placeholder.com/300x350" />
+        <h3>Camiseta Premium</h3>
+        <p>R$ 79,90</p>
+        <a class="btn" href="produto.html?id=1">Ver produto</a>
+    </div>
+
+    <div class="produto">
+        <img src="https://via.placeholder.com/300x350" />
+        <h3>Calça Confort</h3>
+        <p>R$ 129,90</p>
+        <a class="btn" href="produto.html?id=2">Ver produto</a>
+    </div>
+
+    <div class="produto">
+        <img src="https://via.placeholder.com/300x350" />
+        <h3>Jaqueta Urban</h3>
+        <p>R$ 199,90</p>
+        <a class="btn" href="produto.html?id=3">Ver produto</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>Ideal Store © 2025</p>
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto - Ideal Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <h1 class="logo">IDEAL STORE</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<div class="produto-detalhe">
+    <img src="https://via.placeholder.com/350x400" />
+    <div>
+        <h2 id="nome-produto">Camiseta Premium</h2>
+        <p id="preco-produto">R$ 79,90</p>
+        <button class="btn">Adicionar ao carrinho</button>
+    </div>
+</div>
+
+<footer>
+    <p>Ideal Store © 2025</p>
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Ideal Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <h1 class="logo">IDEAL STORE</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<h2 class="titulo">Seu Carrinho</h2>
+
+<div class="carrinho-vazio">
+    <p>Seu carrinho está vazio 😢</p>
+</div>
+
+<footer>
+    <p>Ideal Store © 2025</p>
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — Ideal Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <h1 class="logo">IDEAL STORE</h1>
+</header>
+
+<div class="login-box">
+    <h2>Entrar</h2>
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Senha">
+    <button class="btn">Entrar</button>
+
+    <p>Não tem conta? <a href="register.html">Criar conta</a></p>
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta — Ideal Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <h1 class="logo">IDEAL STORE</h1>
+</header>
+
+<div class="login-box">
+    <h2>Criar Conta</h2>
+    <input type="text" placeholder="Nome completo">
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Senha">
+    <button class="btn">Registrar</button>
+</div>
+
+</body>
+</html>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: black;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logo {
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.hero {
+    height: 300px;
+    background: url('https://via.placeholder.com/1200x400') center/cover;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+}
+
+.btn {
+    background: black;
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.produto {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.produto img { width: 100%; border-radius: 6px; }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: white;
+    margin-top: 40px;
+}
+
+.login-box {
+    width: 300px;
+    margin: 60px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.login-box input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
