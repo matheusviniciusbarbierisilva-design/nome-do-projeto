@@ -1,91 +1,106 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. DADOS DE PRODUTOS COMPLETOS (Simulação de um Banco de Dados/API)
-    // Categoria é adicionada para permitir a filtragem por tipo de produto.
-    const productData = [
-        { id: 1, name: "Vestido Floral Longo", price: 189.90, oldPrice: 229.90, isPromo: true, category: "vestido", image: "vestido_floral.jpg", tag: "NOVO" },
-        { id: 2, name: "Calça Jeans Skinny Azul", price: 99.90, oldPrice: null, isPromo: true, category: "calca", image: "calca_jeans.jpg", tag: "OFERTA" },
-        { id: 3, name: "Jaqueta de Couro PU Preta", price: 299.00, oldPrice: 350.00, isPromo: false, category: "jaqueta", image: "jaqueta_couro.jpg", tag: "ESGOTANDO" },
-        { id: 4, name: "Camiseta Básica Algodão Branca", price: 49.90, oldPrice: null, isPromo: false, category: "camiseta", image: "camiseta_basica.jpg", tag: "BASICO" },
-        { id: 5, name: "Blusa de Lã Feminina", price: 129.90, oldPrice: 150.00, isPromo: true, category: "camiseta", image: "blusa_la.jpg", tag: "PROMO" },
-        { id: 6, name: "Tênis Casual Branco Urbano", price: 179.90, oldPrice: null, isPromo: false, category: "acessorio", image: "tenis_casual.jpg", tag: "NOVO" },
-        { id: 7, name: "Bermuda Cargo Masculina", price: 85.00, oldPrice: null, isPromo: false, category: "calca", image: "bermuda_cargo.jpg", tag: "MASCULINO" },
-        { id: 8, name: "Vestido de Festa Curto", price: 250.00, oldPrice: 290.00, isPromo: false, category: "vestido", image: "vestido_festa.jpg", tag: "FESTA" },
-        { id: 9, name: "Cinto de Couro Genuíno", price: 75.00, oldPrice: null, isPromo: false, category: "acessorio", image: "cinto_couro.jpg", tag: "PREMIUM" },
-        { id: 10, name: "Suéter de Tricô", price: 145.00, oldPrice: null, isPromo: false, category: "camiseta", image: "sueter_trico.jpg", tag: "INVERNO" }
-    ];
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ideal Store Roupas e Acessórios em Cambé, PR. Moda feminina e masculina, novidades e promoções imperdíveis.">
+    <title>Ideal Store Cambé | Moda Feminina e Masculina, Promoções</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="ativos/css/style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
 
-    const catalogContainer = document.getElementById('catalog-container');
-    const searchInput = document.getElementById('searchInput');
-    const categoryFilter = document.getElementById('categoryFilter');
-    const noResultsMessage = document.getElementById('noResults');
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo" aria-label="Página Inicial da Ideal Store">Ideal Store</a>
+            
+            <nav id="nav-menu" class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#promocoes">Promoções</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir e Fechar Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
 
-    // Função para Criar o HTML do Card de Produto (Reutilizada)
-    const createProductCard = (product) => {
-        const oldPriceHtml = product.oldPrice 
-            ? `<span class="old-price">R$ ${product.oldPrice.toFixed(2).replace('.', ',')}</span>` 
-            : '';
-        const badgeHtml = product.tag 
-            ? `<span class="badge">${product.tag}</span>` 
-            : '';
+    <main>
+        <section id="hero" class="hero-section" role="banner">
+            <div class="container hero-content">
+                <h1>Moda com Atitude em Cambé, PR.</h1>
+                <p>Encontre o look perfeito para qualquer ocasião.</p>
+                <a href="#promocoes" class="btn-primary">Ver Ofertas Especiais</a>
+            </div>
+        </section>
 
-        return `
-            <article class="product-card">
-                ${badgeHtml}
-                <img src="images/${product.image}" alt="Foto do produto: ${product.name}">
-                <div class="card-details">
-                    <h4>${product.name}</h4>
-                    <p class="price">${oldPriceHtml} R$ ${product.price.toFixed(2).replace('.', ',')}</p>
-                    <a href="https://wa.me/5543996126966?text=Olá! Tenho interesse no produto ${product.name} (Ref: ${product.id})." target="_blank" class="btn-primary" style="padding: 8px 15px; font-size: 0.9em;">Chamar no Zap</a>
+        <section id="promocoes" class="section-padded">
+            <div class="container">
+                <h2 class="section-title">✨ Promoções da Semana</h2>
+                <div class="product-grid" id="promocoes-container">
                 </div>
-            </article>
-        `;
-    };
+                <p class="callout">Aproveite! Ofertas válidas enquanto durarem os estoques.</p>
+            </div>
+        </section>
 
-    // 2. FUNÇÃO DE FILTRAGEM E RENDERIZAÇÃO
-    const renderProducts = (productsToRender) => {
-        catalogContainer.innerHTML = '';
-        if (productsToRender.length === 0) {
-            noResultsMessage.style.display = 'block';
-        } else {
-            noResultsMessage.style.display = 'none';
-            productsToRender.forEach(product => {
-                catalogContainer.innerHTML += createProductCard(product);
-            });
-        }
-    };
+        <section id="produtos" class="section-light">
+            <div class="container">
+                <h2 class="section-title">Novidades em Destaque</h2>
+                <div class="product-grid" id="produtos-container">
+                </div>
+                <a href="catalogo.html" class="btn-secondary">Ver Todo o Catálogo</a>
+            </div>
+        </section>
 
-    const applyFilters = () => {
-        const searchTerm = searchInput.value.toLowerCase();
-        const selectedCategory = categoryFilter.value;
+        <section id="redes" class="section-padded call-to-action">
+            <div class="container">
+                <h2 class="section-title">Siga nosso Instagram!</h2>
+                <p>Receba dicas de moda, bastidores e seja o primeiro a ver os lançamentos.</p>
+                <a href="https://instagram.com/idealstorecambe" target="_blank" class="btn-instagram">
+                    <i class="fab fa-instagram"></i> @idealstorecambe
+                </a>
+            </div>
+        </section>
 
-        let filteredProducts = productData.filter(product => {
-            // Filtra por termo de pesquisa (nome e tag)
-            const matchesSearch = product.name.toLowerCase().includes(searchTerm) || 
-                                  product.tag.toLowerCase().includes(searchTerm);
+        <section id="contato" class="section-padded section-light">
+            <div class="container contato-grid">
+                <div>
+                    <h2 class="section-title">Onde Estamos?</h2>
+                    <p>Venha nos visitar em Cambé e confira as peças pessoalmente!</p>
+                    <address class="store-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Av. Antonio Raminelli, 1444 - Cambé, PR</p>
+                        <p><i class="fas fa-phone"></i> (43) 99612-6966</p>
+                        <p><i class="fas fa-envelope"></i> contato@idealstore.com</p>
+                    </address>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.926224329243!2d-51.24832598495098!3d-23.2798830848386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb41f7e02b6e1f%3A0x6b4f74a3f1b4c9e!2sAv.%20Ant%C3%B4nio%20Raminelli%2C%201444%20-%20Camb%C3%A9%2C%20PR%2C%2086185-000!5e0!3m2!1spt-BR!2sbr!4v1678893456789!5m2!1spt-BR!2sbr" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        aria-label="Localização da Ideal Store no Google Maps">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
 
-            // Filtra por categoria
-            const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>© 2025 Ideal Store Roupas e Acessórios. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://wa.me/5543996126966" target="_blank" aria-label="WhatsApp da Loja"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/idealstorecambe" target="_blank" aria-label="Instagram da Loja"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
 
-            return matchesSearch && matchesCategory;
-        });
-
-        renderProducts(filteredProducts);
-    };
-
-    // 3. LISTENERS
-    searchInput.addEventListener('keyup', applyFilters); // A cada tecla digitada
-    categoryFilter.addEventListener('change', applyFilters); // Ao mudar a opção
-    
-    // RENDERIZAÇÃO INICIAL (mostra todos os produtos ao carregar)
-    applyFilters(); 
-    
-    // Menu responsivo (código duplicado para garantir que o menu funcione nesta página)
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-
-    menuToggle.addEventListener('click', () => {
-        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-        menuToggle.setAttribute('aria-expanded', !isExpanded);
-        navMenu.classList.toggle('active');
-    });
-});
+    <script src="ativos/js/script.js"></script> </body>
+</html>
