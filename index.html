@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ideal Store Roupas e Acessórios em Cambé, PR. Moda feminina e masculina, novidades e promoções imperdíveis.">
-    <title>Ideal Store Cambé | Moda Feminina e Masculina, Promoções</title>
+    <meta name="description" content="Nossa história na Ideal Store em Cambé. Missão, visão e valores da sua loja de roupas favorita.">
+    <title>Sobre Nós | Ideal Store Cambé</title>
     
-    <link rel="stylesheet" href="ativos/css/style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="ativos/css/style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -20,10 +17,10 @@
             
             <nav id="nav-menu" class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="#promocoes">Promoções</a></li>
+                    <li><a href="index.html#promocoes">Promoções</a></li>
                     <li><a href="catalogo.html">Catálogo</a></li>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="sobre.html" class="active">Sobre Nós</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
                 </ul>
             </nav>
             <button class="menu-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir e Fechar Menu">
@@ -33,61 +30,34 @@
     </header>
 
     <main>
-        <section id="hero" class="hero-section" role="banner">
-            <div class="container hero-content">
-                <h1>Moda com Atitude em Cambé, PR.</h1>
-                <p>Encontre o look perfeito para qualquer ocasião.</p>
-                <a href="#promocoes" class="btn-primary">Ver Ofertas Especiais</a>
-            </div>
-        </section>
-
-        <section id="promocoes" class="section-padded">
+        <section id="about-us" class="section-padded">
             <div class="container">
-                <h2 class="section-title">✨ Promoções da Semana</h2>
-                <div class="product-grid" id="promocoes-container">
+                <h1 class="section-title">Nossa História em Cambé</h1>
+                
+                <div class="about-content">
+                    <p>A **Ideal Store** nasceu em Cambé, Paraná, com a missão de trazer as últimas tendências da moda com preços justos e acessíveis para nossa comunidade. O que começou como um sonho em 2018, rapidamente se tornou um ponto de referência para quem busca qualidade, estilo e atendimento personalizado.</p>
+
+                    <div class="vision-mission-grid">
+                        <div class="card-vision-mission">
+                            <h3>Missão</h3>
+                            <p>Vestir nossos clientes com confiança e estilo, oferecendo uma curadoria de roupas e acessórios que celebram a individualidade e as últimas tendências do mundo fashion.</p>
+                        </div>
+                        <div class="card-vision-mission">
+                            <h3>Visão</h3>
+                            <p>Ser a loja de roupas mais querida e confiável de Cambé e região, reconhecida pela excelência no atendimento e pela qualidade dos produtos.</p>
+                        </div>
+                        <div class="card-vision-mission">
+                            <h3>Valores</h3>
+                            <ul>
+                                <li><strong>Paixão</strong> pela Moda.</li>
+                                <li><strong>Comprometimento</strong> com a Qualidade.</li>
+                                <li><strong>Respeito</strong> e Atendimento ao Cliente.</li>
+                                <li><strong>Inovação</strong> constante.</li>
+                            </ul>
+                        </div>
                     </div>
-                <p class="callout">Aproveite! Ofertas válidas enquanto durarem os estoques.</p>
-            </div>
-        </section>
 
-        <section id="produtos" class="section-light">
-            <div class="container">
-                <h2 class="section-title">Novidades em Destaque</h2>
-                <div class="product-grid" id="produtos-container">
-                    </div>
-                <a href="catalogo.html" class="btn-secondary">Ver Todo o Catálogo</a>
-            </div>
-        </section>
-
-        <section id="redes" class="section-padded call-to-action">
-            <div class="container">
-                <h2 class="section-title">Siga nosso Instagram!</h2>
-                <p>Receba dicas de moda, bastidores e seja o primeiro a ver os lançamentos.</p>
-                <a href="https://instagram.com/idealstorecambe" target="_blank" class="btn-instagram">
-                    <i class="fab fa-instagram"></i> @idealstorecambe
-                </a>
-            </div>
-        </section>
-
-        <section id="contato" class="section-padded section-light">
-            <div class="container contato-grid">
-                <div>
-                    <h2 class="section-title">Onde Estamos?</h2>
-                    <p>Venha nos visitar em Cambé e confira as peças pessoalmente!</p>
-                    <address class="store-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Av. Antonio Raminelli, 1444 - Cambé, PR</p>
-                        <p><i class="fas fa-phone"></i> (43) 99612-6966</p>
-                        <p><i class="fas fa-envelope"></i> contato@idealstore.com</p>
-                    </address>
-                </div>
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.926224329243!2d-51.24832598495098!3d-23.2798830848386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb41f7e02b6e1f%3A0x6b4f74a3f1b4c9e!2sAv.%20Ant%C3%B4nio%20Raminelli%2C%201444%20-%20Camb%C3%A9%2C%20PR%2C%2086185-000!5e0!3m2!1spt-BR!2sbr!4v1678893456789!5m2!1spt-BR!2sbr" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        aria-label="Localização da Ideal Store no Google Maps">
-                    </iframe>
+                    <p class="final-message">Convidamos você a fazer parte da nossa história! Visite nossa loja física ou explore nosso catálogo online. Seu estilo, nossa paixão.</p>
                 </div>
             </div>
         </section>
@@ -104,4 +74,72 @@
     </footer>
 
     <script src="ativos/js/script.js"></script> </body>
+</html><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo completo da Ideal Store em Cambé. Moda feminina e masculina, todas as peças disponíveis.">
+    <title>Catálogo Completo | Ideal Store Cambé</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ativos/css/style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo" aria-label="Página Inicial da Ideal Store">Ideal Store</a>
+            
+            <nav id="nav-menu" class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html#promocoes">Promoções</a></li>
+                    <li><a href="catalogo.html" class="active">Catálogo</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir e Fechar Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="full-catalog" class="section-padded">
+            <div class="container">
+                <h1 class="section-title">Catálogo Completo de Produtos</h1>
+
+                <div class="filter-bar">
+                    <input type="text" id="searchInput" placeholder="Buscar por nome ou descrição..." aria-label="Buscar produtos">
+                    <select id="categoryFilter" aria-label="Filtrar por Categoria">
+                        <option value="all">Todas as Categorias</option>
+                        <option value="vestido">Vestidos</option>
+                        <option value="calca">Calças</option>
+                        <option value="jaqueta">Casacos e Jaquetas</option>
+                        <option value="camiseta">Camisetas e Blusas</option>
+                        <option value="acessorio">Acessórios</option>
+                    </select>
+                </div>
+
+                <div class="product-grid" id="catalog-container">
+                    </div>
+                
+                <p id="noResults" style="display:none; text-align: center; margin-top: 40px; font-size: 1.2em;">Nenhum produto encontrado com os filtros selecionados.</p>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>© 2025 Ideal Store Roupas e Acessórios. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://wa.me/5543996126966" target="_blank" aria-label="WhatsApp da Loja"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/idealstorecambe" target="_blank" aria-label="Instagram da Loja"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="ativos/js/catalogo-script.js"></script> </body>
 </html>
