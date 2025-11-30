@@ -1,85 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ideal Store</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo completo da Ideal Store em Cambé. Moda feminina e masculina, todas as peças disponíveis.">
+    <title>Catálogo Completo | Ideal Store Cambé</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-<header>
-  <div class="logo">
-    <img src="images/logo.png" alt="Ideal Store Logo">
-  </div>
-  <nav>
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="#">Produtos</a></li>
-      <li><a href="#">Promoções</a></li>
-      <li><a href="#">Sobre</a></li>
-      <li><a href="#">Contato</a></li>
-    </ul>
-  </nav>
-</header>
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo" aria-label="Página Inicial da Ideal Store">Ideal Store</a>
+            
+            <nav id="nav-menu" class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html#promocoes">Promoções</a></li>
+                    <li><a href="catalogo.html" class="active">Catálogo</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir e Fechar Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
 
-<!-- Slider / Hero -->
-<section class="hero-slider">
-  <div class="slide active">
-    <img src="images/banner1.jpg" alt="Banner 1">
-    <div class="slide-text">
-      <h1>Bem-vindo à Ideal Store</h1>
-      <p>Moda e estilo ao seu alcance!</p>
-      <a href="#" class="btn">Ver Produtos</a>
-    </div>
-  </div>
-  <div class="slide">
-    <img src="images/banner2.jpg" alt="Banner 2">
-    <div class="slide-text">
-      <h1>Promoções Exclusivas</h1>
-      <p>Não perca nossas ofertas imperdíveis!</p>
-      <a href="#" class="btn">Ver Promoções</a>
-    </div>
-  </div>
-  <div class="slide">
-    <img src="images/banner3.jpg" alt="Banner 3">
-    <div class="slide-text">
-      <h1>Novidades da Temporada</h1>
-      <p>Confira as últimas tendências em roupas.</p>
-      <a href="#" class="btn">Ver Novidades</a>
-    </div>
-  </div>
-</section>
+    <main>
+        <section id="full-catalog" class="section-padded">
+            <div class="container">
+                <h1 class="section-title">Catálogo Completo de Produtos</h1>
 
-<!-- Produtos em Destaque -->
-<section class="destaques">
-  <h2>Produtos em Destaque</h2>
-  <div class="produtos-container">
-    <div class="produto">
-      <img src="images/camisa1.jpg" alt="Camisa Casual">
-      <h3>Camisa Casual</h3>
-      <p>R$ 99,90</p>
-      <button class="btn-comprar">Comprar</button>
-    </div>
-    <div class="produto">
-      <img src="images/camisa2.jpg" alt="Camisa Estampada">
-      <h3>Camisa Estampada</h3>
-      <p>R$ 119,90</p>
-      <button class="btn-comprar">Comprar</button>
-    </div>
-    <div class="produto">
-      <img src="images/camisa3.jpg" alt="Camisa Social">
-      <h3>Camisa Social</h3>
-      <p>R$ 149,90</p>
-      <button class="btn-comprar">Comprar</button>
-    </div>
-  </div>
-</section>
+                <div class="filter-bar">
+                    <input type="text" id="searchInput" placeholder="Buscar por nome ou descrição..." aria-label="Buscar produtos">
+                    <select id="categoryFilter" aria-label="Filtrar por Categoria">
+                        <option value="all">Todas as Categorias</option>
+                        <option value="vestido">Vestidos</option>
+                        <option value="calca">Calças</option>
+                        <option value="jaqueta">Casacos e Jaquetas</option>
+                        <option value="camiseta">Camisetas e Blusas</option>
+                        <option value="acessorio">Acessórios</option>
+                    </select>
+                </div>
 
-<footer>
-  <p>&copy; 2025 Ideal Store. Todos os direitos reservados.</p>
-</footer>
+                <div class="product-grid" id="catalog-container">
+                    </div>
+                
+                <p id="noResults" style="display:none; text-align: center; margin-top: 40px; font-size: 1.2em;">Nenhum produto encontrado com os filtros selecionados.</p>
 
-<script src="js/script.js"></script>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>© 2025 Ideal Store Roupas e Acessórios. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://wa.me/5543996126966" target="_blank" aria-label="WhatsApp da Loja"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/idealstorecambe" target="_blank" aria-label="Instagram da Loja"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/catalogo-script.js"></script>
 </body>
 </html>
