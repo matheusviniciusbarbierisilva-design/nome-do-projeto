@@ -1,211 +1,3113 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ideal Store Roupas e Acessórios em Cambé, PR. Moda feminina e masculina, novidades e promoções imperdíveis.">
-    <title>Ideal Store Cambé | Moda Feminina e Masculina, Promoções</title>
+/*
+* Ideal Store - Tema Principal
+* Versão: 1.0.0
+* Autor: Desenvolvedor
+* Website: www.idealstore.com.br
+*/
+
+/*=================================================
+  Índice
+==================================================
+01. Variáveis CSS e Reset
+02. Elementos Básicos e Tipografia
+03. Utilitários e Helpers
+04. Layout e Containers
+05. Preloader
+06. Header e Navegação
+07. Mobile Menu
+08. Search Overlay
+09. Hero Slider
+10. Categorias Destaque
+11. Produtos Cards
+12. Carousel e Slider Componentes
+13. Banners Promocionais
+14. Blog e Posts
+15. Instagram Feed
+16. Vantagens e Features
+17. Newsletter
+18. Footer
+19. Back to Top Button
+20. Páginas Internas
+21. Modals e Popups
+22. Animações e Transições
+23. Formulários
+24. Toast e Notificações
+==================================================*/
+
+/*=================================================
+  01. Variáveis CSS e Reset
+==================================================*/
+:root {
+    /* Cores Principais */
+    --primary-color: #ff6b6b;
+    --secondary-color: #74b9ff;
+    --accent-color: #feca57;
+    --dark-color: #2d3436;
+    --light-color: #f8f9fa;
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    /* Tons de Cinza */
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
     
-    <link rel="stylesheet" href="ativos/css/style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-
-    <header class="main-header">
-        <div class="container header-content">
-            <a href="index.html" class="logo" aria-label="Página Inicial da Ideal Store">Ideal Store</a>
-            
-            <nav id="nav-menu" class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="#promocoes">Promoções</a></li>
-                    <li><a href="catalogo.html">Catálogo</a></li>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-            <button class="menu-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir e Fechar Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
-
-    <main>
-        <section id="hero" class="hero-section" role="banner">
-            <div class="container hero-content">
-                <h1>Moda com Atitude em Cambé, PR.</h1>
-                <p>Encontre o look perfeito para qualquer ocasião.</p>
-                <a href="#promocoes" class="btn-primary">Ver Ofertas Especiais</a>
-            </div>
-        </section>
-
-        <section id="promocoes" class="section-padded">
-            <div class="container">
-                <h2 class="section-title">✨ Promoções da Semana</h2>
-                <div class="product-grid" id="promocoes-container">
-                </div>
-                <p class="callout">Aproveite! Ofertas válidas enquanto durarem os estoques.</p>
-            </div>
-        </section>
-
-        <section id="produtos" class="section-light">
-            <div class="container">
-                <h2 class="section-title">Novidades em Destaque</h2>
-                <div class="product-grid" id="produtos-container">
-                </div>
-                <a href="catalogo.html" class="btn-secondary">Ver Todo o Catálogo</a>
-            </div>
-        </section>
-
-        <section id="redes" class="section-padded call-to-action">
-            <div class="container">
-                <h2 class="section-title">Siga nosso Instagram!</h2>
-                <p>Receba dicas de moda, bastidores e seja o primeiro a ver os lançamentos.</p>
-                <a href="https://instagram.com/idealstorecambe" target="_blank" class="btn-instagram">
-                    <i class="fab fa-instagram"></i> @idealstorecambe
-                </a>
-            </div>
-        </section>
-
-        <section id="contato" class="section-padded section-light">
-            <div class="container contato-grid">
-                <div>
-                    <h2 class="section-title">Onde Estamos?</h2>
-                    <p>Venha nos visitar em Cambé e confira as peças pessoalmente!</p>
-                    <address class="store-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Av. Antonio Raminelli, 1444 - Cambé, PR</p>
-                        <p><i class="fas fa-phone"></i> (43) 99612-6966</p>
-                        <p><i class="fas fa-envelope"></i> contato@idealstore.com</p>
-                    </address>
-                </div>
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.926224329243!2d-51.24832598495098!3d-23.2798830848386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb41f7e02b6e1f%3A0x6b4f74a3f1b4c9e!2sAv.%20Ant%C3%B4nio%20Raminelli%2C%201444%20-%20Camb%C3%A9%2C%20PR%2C%2086185-000!5e0!3m2!1spt-BR!2sbr!4v1678893456789!5m2!1spt-BR!2sbr" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        aria-label="Localização da Ideal Store no Google Maps">
-                    </iframe>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container footer-content">
-            <p>© 2025 Ideal Store Roupas e Acessórios. Todos os direitos reservados.</p>
-            <div class="social-links">
-                <a href="https://wa.me/5543996126966" target="_blank" aria-label="WhatsApp da Loja"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com/idealstorecambe" target="_blank" aria-label="Instagram da Loja"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="ativos/js/script.js"></script> </body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ideal Store Roupas e Acessórios em Cambé, PR. Moda feminina e masculina, novidades e promoções imperdíveis.">
-    <title>Ideal Store Cambé | Moda Feminina e Masculina, Promoções</title>
+    /* Cores Status */
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+    --warning-color: #f39c12;
+    --info-color: #3498db;
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    /* Tipografia */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
     
-    <link rel="stylesheet" href="ativos/css/style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+    /* Tamanhos */
+    --container-width: 1200px;
+    --header-height: 80px;
+    --footer-height: 350px;
+    
+    /* Border Radius */
+    --border-radius-sm: 3px;
+    --border-radius-md: 6px;
+    --border-radius-lg: 10px;
+    
+    /* Box Shadow */
+    --box-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --box-shadow-md: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    --box-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    
+    /* Transitions */
+    --transition-fast: all 0.2s ease;
+    --transition-normal: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
+    
+    /* Z-index */
+    --z-back: -10;
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
 
-    <header class="main-header">
-        <div class="container header-content">
-            <a href="index.html" class="logo" aria-label="Página Inicial da Ideal Store">Ideal Store</a>
-            
-            <nav id="nav-menu" class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="#promocoes">Promoções</a></li>
-                    <li><a href="catalogo.html">Catálogo</a></li>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-            <button class="menu-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir e Fechar Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
+/* Reset e Normalize */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <main>
-        <section id="hero" class="hero-section" role="banner">
-            <div class="container hero-content">
-                <h1>Moda com Atitude em Cambé, PR.</h1>
-                <p>Encontre o look perfeito para qualquer ocasião.</p>
-                <a href="#promocoes" class="btn-primary">Ver Ofertas Especiais</a>
-            </div>
-        </section>
+html {
+    font-size: 62.5%; /* 10px = 1rem */
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
-        <section id="promocoes" class="section-padded">
-            <div class="container">
-                <h2 class="section-title">✨ Promoções da Semana</h2>
-                <div class="product-grid" id="promocoes-container">
-                </div>
-                <p class="callout">Aproveite! Ofertas válidas enquanto durarem os estoques.</p>
-            </div>
-        </section>
+body {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    color: var(--gray-800);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: #fff;
+}
 
-        <section id="produtos" class="section-light">
-            <div class="container">
-                <h2 class="section-title">Novidades em Destaque</h2>
-                <div class="product-grid" id="produtos-container">
-                </div>
-                <a href="catalogo.html" class="btn-secondary">Ver Todo o Catálogo</a>
-            </div>
-        </section>
+ul {
+    list-style: none;
+}
 
-        <section id="redes" class="section-padded call-to-action">
-            <div class="container">
-                <h2 class="section-title">Siga nosso Instagram!</h2>
-                <p>Receba dicas de moda, bastidores e seja o primeiro a ver os lançamentos.</p>
-                <a href="https://instagram.com/idealstorecambe" target="_blank" class="btn-instagram">
-                    <i class="fab fa-instagram"></i> @idealstorecambe
-                </a>
-            </div>
-        </section>
-        <section id="contato" class="section-padded section-light">
-            <div class="container contato-grid">
-                <div>
-                    <h2 class="section-title">Onde Estamos?</h2>
-                    <p>Venha nos visitar em Cambé e confira as peças pessoalmente!</p>
-                    <address class="store-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Av. Antonio Raminelli, 1444 - Cambé, PR</p>
-                        <p><i class="fas fa-phone"></i> (43) 99612-6966</p>
-                        <p><i class="fas fa-envelope"></i> contato@idealstore.com</p>
-                    </address>
-                </div>
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.926224329243!2d-51.24832598495098!3d-23.2798830848386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb41f7e02b6e1f%3A0x6b4f74a3f1b4c9e!2sAv.%20Ant%C3%B4nio%20Raminelli%2C%201444%20-%20Camb%C3%A9%2C%20PR%2C%2086185-000!5e0!3m2!1spt-BR!2sbr!4v1678893456789!5m2!1spt-BR!2sbr" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        aria-label="Localização da Ideal Store no Google Maps">
-                    </iframe>
-                </div>
-            </div>
-        </section>
-    </main>
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-normal);
+}
 
-    <footer class="main-footer">
-        <div class="container footer-content">
-            <p>© 2025 Ideal Store Roupas e Acessórios. Todos os direitos reservados.</p>
-            <div class="social-links">
-                <a href="https://wa.me/5543996126966" target="_blank" aria-label="WhatsApp da Loja"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com/idealstorecambe" target="_blank" aria-label="Instagram da Loja"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
+a:hover {
+    color: var(--primary-color);
+}
 
-    <script src="ativos/js/script.js"></script> </body>
-</html>
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+input, button, textarea, select {
+    font: inherit;
+    color: inherit;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Clearing */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*=================================================
+  02. Elementos Básicos e Tipografia
+==================================================*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+    color: var(--gray-900);
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 3.6rem;
+}
+
+h3 {
+    font-size: 2.8rem;
+}
+
+h4 {
+    font-size: 2.2rem;
+}
+
+h5 {
+    font-size: 1.8rem;
+}
+
+h6 {
+    font-size: 1.6rem;
+}
+
+p {
+    margin-bottom: 1.6rem;
+    color: var(--gray-700);
+}
+
+strong, b {
+    font-weight: 700;
+}
+
+small {
+    font-size: 1.2rem;
+}
+
+blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    font-style: italic;
+    background-color: var(--gray-100);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--gray-300);
+    margin: 3rem 0;
+}
+
+/* Links e Botões */
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.4rem;
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition-normal);
+    border: 2px solid transparent;
+    font-size: 1.4rem;
+}
+
+.btn-sm {
+    padding: 0.8rem 1.6rem;
+    font-size: 1.2rem;
+}
+
+.btn-lg {
+    padding: 1.6rem 3.2rem;
+    font-size: 1.6rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    color: var(--gray-900);
+}
+
+.btn-accent:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: var(--gray-900);
+}
+
+.btn-white:hover {
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--gray-900);
+    color: var(--gray-900);
+}
+
+.btn-outline:hover {
+    background-color: var(--gray-900);
+    color: #fff;
+}
+
+.btn-outline-white {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn-outline-white:hover {
+    background-color: #fff;
+    color: var(--gray-900);
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn i {
+    margin-right: 0.8rem;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: var(--border-radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge.new {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.badge.sale {
+    background-color: var(--error-color);
+    color: #fff;
+}
+
+.badge.out {
+    background-color: var(--gray-600);
+    color: #fff;
+}
+
+.badge.hot {
+    background-color: var(--warning-color);
+    color: #fff;
+}
+
+/*=================================================
+  03. Utilitários e Helpers
+==================================================*/
+/* Display e Flexbox */
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.flex-column {
+    flex-direction: column !important;
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+
+.justify-content-start {
+    justify-content: flex-start !important;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.justify-content-end {
+    justify-content: flex-end !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+.justify-content-around {
+    justify-content: space-around !important;
+}
+
+.align-items-start {
+    align-items: flex-start !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.align-items-end {
+    align-items: flex-end !important;
+}
+
+/* Margens */
+.m-0 {
+    margin: 0 !important;
+}
+
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.mt-10 {
+    margin-top: 1rem !important;
+}
+
+.mt-20 {
+    margin-top: 2rem !important;
+}
+
+.mt-30 {
+    margin-top: 3rem !important;
+}
+
+.mt-40 {
+    margin-top: 4rem !important;
+}
+
+.mt-50 {
+    margin-top: 5rem !important;
+}
+
+.mb-10 {
+    margin-bottom: 1rem !important;
+}
+
+.mb-20 {
+    margin-bottom: 2rem !important;
+}
+
+.mb-30 {
+    margin-bottom: 3rem !important;
+}
+
+.mb-40 {
+    margin-bottom: 4rem !important;
+}
+
+.mb-50 {
+    margin-bottom: 5rem !important;
+}
+
+/* Paddings */
+.p-0 {
+    padding: 0 !important;
+}
+
+.p-10 {
+    padding: 1rem !important;
+}
+
+.p-20 {
+    padding: 2rem !important;
+}
+
+.p-30 {
+    padding: 3rem !important;
+}
+
+.py-50 {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+.py-80 {
+    padding-top: 8rem !important;
+    padding-bottom: 8rem !important;
+}
+
+.py-100 {
+    padding-top: 10rem !important;
+    padding-bottom: 10rem !important;
+}
+
+/* Texto */
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.text-lowercase {
+    text-transform: lowercase !important;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.text-dark {
+    color: var(--gray-900) !important;
+}
+
+.text-muted {
+    color: var(--gray-600) !important;
+}
+
+.font-weight-light {
+    font-weight: 300 !important;
+}
+
+.font-weight-normal {
+    font-weight: 400 !important;
+}
+
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+/* Backgrounds */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color) !important;
+}
+
+.bg-accent {
+    background-color: var(--accent-color) !important;
+}
+
+.bg-light {
+    background-color: var(--gray-100) !important;
+}
+
+.bg-dark {
+    background-color: var(--gray-900) !important;
+}
+
+.bg-white {
+    background-color: white !important;
+}
+
+/* Bordas */
+.border {
+    border: 1px solid var(--gray-300) !important;
+}
+
+.border-top {
+    border-top: 1px solid var(--gray-300) !important;
+}
+
+.border-right {
+    border-right: 1px solid var(--gray-300) !important;
+}
+
+.border-bottom {
+    border-bottom: 1px solid var(--gray-300) !important;
+}
+
+.border-left {
+    border-left: 1px solid var(--gray-300) !important;
+}
+
+.border-0 {
+    border: 0 !important;
+}
+
+/* Section Padding */
+.section-padding {
+    padding: 8rem 0;
+}
+
+.section-padding-sm {
+    padding: 5rem 0;
+}
+
+.section-padding-lg {
+    padding: 12rem 0;
+}
+
+/*=================================================
+  04. Layout e Containers
+==================================================*/
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.container-fluid {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1.5rem;
+}
+
+.col {
+    flex: 1;
+    padding: 0 1.5rem;
+}
+
+.col-6 {
+    width: 50%;
+    padding: 0 1.5rem;
+}
+
+.col-4 {
+    width: 33.33333%;
+    padding: 0 1.5rem;
+}
+
+.col-3 {
+    width: 25%;
+    padding: 0 1.5rem;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.section-heading .sub-heading {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.section-heading .main-heading {
+    font-size: 3.6rem;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.section-heading .main-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6rem;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+/*=================================================
+  05. Preloader
+==================================================*/
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: var(--z-modal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-normal);
+}
+
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    width: 4rem;
+    height: 4rem;
+    border: 4px solid var(--gray-300);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*=================================================
+  06. Header e Navegação
+==================================================*/
+.top-bar {
+    background-color: var(--gray-800);
+    color: #fff;
+    padding: 1rem 0;
+    font-size: 1.3rem;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-contact a {
+    color: var(--gray-300);
+    margin-right: 2rem;
+    transition: var(--transition-fast);
+}
+
+.top-contact a:hover {
+    color: var(--primary-color);
+}
+
+.top-contact a i {
+    margin-right: 0.5rem;
+}
+
+.top-social {
+    display: flex;
+    align-items: center;
+}
+
+.top-social span {
+    margin-right: 1rem;
+    color: var(--gray-300);
+}
+
+.top-social a {
+    color: var(--gray-300);
+    margin-left: 1.5rem;
+    transition: var(--transition-fast);
+}
+
+.top-social a:hover {
+    color: var(--primary-color);
+}
+
+.main-header {
+    background-color: #fff;
+    box-shadow: var(--box-shadow-sm);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: var(--z-fixed);
+    transition: var(--transition-normal);
+}
+
+.main-header.sticky {
+    box-shadow: var(--box-shadow-md);
+    background-color: #fff;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    color: var(--gray-900);
+}
+
+.logo-img {
+    height: 4rem;
+    margin-right: 1rem;
+}
+
+.logo h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav {
+    margin-right: 3rem;
+}
+
+.main-nav .menu {
+    display: flex;
+}
+
+.menu-item {
+    position: relative;
+    margin: 0 1.5rem;
+}
+
+.menu-item a {
+    color: var(--gray-800);
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.menu-item a.active, .menu-item a:hover {
+    color: var(--primary-color);
+}
+
+.menu-item a.active::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.dropdown > a i {
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 20rem;
+    background-color: #fff;
+    box-shadow: var(--box-shadow-md);
+    padding: 1rem 0;
+    border-radius: var(--border-radius-md);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: var(--transition-normal);
+    z-index: var(--z-tooltip);
+}
+
+.dropdown:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.submenu li {
+    padding: 0.7rem 2rem;
+}
+
+.submenu li a {
+    display: block;
+    font-weight: 500;
+    color: var(--gray-700);
+}
+
+.submenu li a:hover {
+    color: var(--primary-color);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.action-btn {
+    margin-left: 2rem;
+    position: relative;
+    font-size: 1.8rem;
+    color: var(--gray-800);
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.action-btn:hover {
+    color: var(--primary-color);
+}
+
+.action-btn .count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.user-account {
+    position: relative;
+}
+
+.account-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 15rem;
+    background-color: #fff;
+    box-shadow: var(--box-shadow-md);
+    border-radius: var(--border-radius-md);
+    padding: 1rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: var(--transition-normal);
+    z-index: var(--z-tooltip);
+}
+
+.user-account:hover .account-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(10px);
+}
+
+.account-dropdown ul li {
+    padding: 0.7rem 1.5rem;
+}
+
+.account-dropdown ul li a {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--gray-700);
+}
+
+.account-dropdown ul li a:hover {
+    color: var(--primary-color);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.4rem;
+    height: 1.8rem;
+    margin-left: 2rem;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--gray-900);
+    transition: var(--transition-normal);
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/*=================================================
+  07. Mobile Menu
+==================================================*/
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 30rem;
+    height: 100%;
+    background-color: #fff;
+    z-index: var(--z-modal);
+    overflow-y: auto;
+    transition: var(--transition-normal);
+    box-shadow: var(--box-shadow-lg);
+    padding: 2rem 0;
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.close-mobile-menu {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: var(--gray-900);
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.close-mobile-menu:hover {
+    color: var(--primary-color);
+}
+
+.mobile-menu-inner {
+    padding: 5rem 2rem 2rem;
+}
+
+.mobile-search {
+    margin-bottom: 3rem;
+}
+
+.mobile-search form {
+    display: flex;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+.mobile-search input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1.4rem;
+}
+
+.mobile-search button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 1.5rem;
+    font-size: 1.4rem;
+}
+
+.mobile-nav ul li {
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.mobile-nav ul li a {
+    display: block;
+    padding: 1.2rem 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--gray-800);
+}
+
+.mobile-nav ul li a.active {
+    color: var(--primary-color);
+}
+
+.mobile-nav ul li a i {
+    float: right;
+    transition: var(--transition-normal);
+}
+
+.mobile-nav .has-dropdown.active > a i {
+    transform: rotate(180deg);
+}
+
+.mobile-submenu {
+    padding-left: 2rem;
+    display: none;
+    border-top: 1px solid var(--gray-200);
+}
+
+.mobile-submenu li:last-child {
+    border-bottom: none;
+}
+
+.mobile-contact {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--gray-300);
+    color: var(--gray-700);
+}
+
+.mobile-contact p {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.mobile-contact p i {
+    margin-right: 0.8rem;
+    color: var(--primary-color);
+}
+
+.mobile-social {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.mobile-social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    background-color: var(--gray-100);
+    color: var(--gray-700);
+    font-size: 1.6rem;
+    transition: var(--transition-normal);
+}
+
+.mobile-social a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: calc(var(--z-fixed) + 5);
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.mobile-menu-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*=================================================
+  08. Search Overlay
+==================================================*/
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.97);
+    z-index: var(--z-modal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-normal);
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-form {
+    width: 100%;
+    max-width: 60rem;
+    position: relative;
+}
+
+.search-form input {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    font-size: 2rem;
+    border-bottom: 2px solid var(--gray-300);
+    transition: var(--transition-normal);
+}
+
+.search-form input:focus {
+    border-color: var(--primary-color);
+}
+
+.search-form button {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: var(--gray-600);
+    transition: var(--transition-normal);
+}
+
+.search-form button:hover {
+    color: var(--primary-color);
+}
+
+.close-search {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    font-size: 2.4rem;
+    color: var(--gray-800);
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.close-search:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+/*=================================================
+  09. Hero Slider
+==================================================*/
+.hero-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slide {
+    height: 60rem;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.slide-1 {
+    background-image: url('../img/slider/slider-1.jpg');
+}
+
+.slide-2 {
+    background-image: url('../img/slider/slider-2.jpg');
+}
+
+.slide-3 {
+    background-image: url('../img/slider/slider-3.jpg');
+}
+
+.slide-content {
+    position: relative;
+    z-index: 1;
+    max-width: 70rem;
+    margin-left: 10%;
+    color: #fff;
+}
+
+.slide-content h2 {
+    font-size: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.slide-content h3 {
+    font-size: 6rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.slide-content p {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 3rem;
+    max-width: 60rem;
+    line-height: 1.7;
+}
+
+.slide-buttons {
+    display: flex;
+    gap: 2rem;
+}
+
+.slider-nav {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    transform: translateY(50%);
+    z-index: 2;
+}
+
+.slider-prev, .slider-next {
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.slider-prev:hover, .slider-next:hover {
+    background-color: var(--primary-color);
+}
+
+.owl-dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.8rem;
+}
+
+.owl-dot {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 50%;
+    transition: var(--transition-normal);
+}
+
+.owl-dot.active {
+    background-color: var(--primary-color) !important;
+}
+
+/*=================================================
+  10. Categorias Destaque
+==================================================*/
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+
+.categoria-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-sm);
+}
+
+.categoria-image {
+    position: relative;
+    height: 30rem;
+    overflow: hidden;
+}
+
+.categoria-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.categoria-item:hover .categoria-image img {
+    transform: scale(1.1);
+}
+
+.categoria-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 3rem;
+    color: #fff;
+    opacity: 0.9;
+    transition: var(--transition-normal);
+}
+
+.categoria-item:hover .categoria-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.categoria-overlay h3 {
+    font-size: 2.4rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.btn-categoria {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+    transition: var(--transition-normal);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.categoria-item:hover .btn-categoria {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn-categoria:hover {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+/*=================================================
+  11. Produtos Cards
+==================================================*/
+.produto-tabs {
+    margin-bottom: 4rem;
+}
+
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-300);
+}
+
+.tab-nav li {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.tab-nav li:hover {
+    color: var(--primary-color);
+}
+
+.tab-nav li.active {
+    color: var(--primary-color);
+}
+
+.tab-nav li.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.tab-content {
+    position: relative;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.produto-card {
+    background-color: #fff;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-sm);
+    transition: var(--transition-normal);
+}
+
+.produto-card:hover {
+    box-shadow: var(--box-shadow-md);
+    transform: translateY(-5px);
+}
+
+.produto-thumb {
+    position: relative;
+    height: 30rem;
+    overflow: hidden;
+}
+
+.produto-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-normal);
+}
+
+.produto-card:hover .produto-thumb img {
+    transform: scale(1.05);
+}
+
+.produto-actions {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-normal);
+}
+
+.produto-card:hover .produto-actions {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.produto-actions a {
+    width: 4rem;
+    height: 4rem;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray-800);
+    transition: var(--transition-normal);
+    box-shadow: var(--box-shadow-sm);
+}
+
+.produto-actions a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.produto-info {
+    padding: 2rem;
+}
+
+.produto-nome {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.produto-nome a {
+    color: var(--gray-900);
+    transition: var(--transition-normal);
+}
+
+.produto-nome a:hover {
+    color: var(--primary-color);
+}
+
+.produto-preco {
+    margin-bottom: 1rem;
+}
+
+.preco-atual {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.preco-antigo {
+    font-size: 1.4rem;
+    color: var(--gray-600);
+    text-decoration: line-through;
+    margin-right: 1rem;
+}
+
+.produto-rating {
+    color: #ffc107;
+    font-size: 1.3rem;
+}
+
+.produto-rating span {
+    color: var(--gray-600);
+    margin-left: 0.5rem;
+}
+
+/*=================================================
+  12. Carousel e Slider Componentes
+==================================================*/
+.produtos-carousel .owl-stage-outer {
+    padding: 2rem 0;
+}
+
+.produtos-carousel .owl-nav {
+    position: absolute;
+    top: -7rem;
+    right: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.produtos-carousel .owl-nav button {
+    width: 4rem !important;
+    height: 4rem !important;
+    background-color: #fff !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-shadow: var(--box-shadow-sm) !important;
+    transition: var(--transition-normal) !important;
+}
+
+.produtos-carousel .owl-nav button:hover {
+    background-color: var(--primary-color) !important;
+}
+
+.produtos-carousel .owl-nav button span {
+    font-size: 2.4rem !important;
+    color: var(--gray-800) !important;
+    transition: var(--transition-normal) !important;
+}
+
+.produtos-carousel .owl-nav button:hover span {
+    color: #fff !important;
+}
+
+/*=================================================
+  13. Banners Promocionais
+==================================================*/
+.banner-promocional {
+    background-image: url('../img/banner-promo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 10rem 0;
+    position: relative;
+    color: #fff;
+    text-align: center;
+}
+
+.banner-promocional::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.promo-content {
+    position: relative;
+    z-index: 1;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+.promo-content h4 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+}
+
+.promo-content h2 {
+    font-size: 4.8rem;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.promo-content p {
+    font-size: 1.8rem;
+    color: var(--gray-200);
+    margin-bottom: 3rem;
+}
+
+.promo-content strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/*=================================================
+  14. Blog e Posts
+==================================================*/
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.blog-item {
+    background-color: #fff;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-sm);
+    transition: var(--transition-normal);
+}
+
+.blog-item:hover {
+    box-shadow: var(--box-shadow-md);
+    transform: translateY(-5px);
+}
+
+.blog-thumb {
+    position: relative;
+    height: 25rem;
+    overflow: hidden;
+}
+
+.blog-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-normal);
+}
+
+.blog-item:hover .blog-thumb img {
+    transform: scale(1.05);
+}
+
+.post-date {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    text-align: center;
+    line-height: 1;
+}
+
+.post-date .day {
+    font-size: 2.4rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.post-date .month {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.blog-content {
+    padding: 2.5rem;
+}
+
+.blog-meta {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    color: var(--gray-600);
+}
+
+.blog-meta span {
+    margin-right: 1.5rem;
+}
+
+.blog-meta span i {
+    margin-right: 0.5rem;
+}
+
+.blog-item h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.blog-item h3 a {
+    color: var(--gray-900);
+    transition: var(--transition-normal);
+}
+
+.blog-item h3 a:hover {
+    color: var(--primary-color);
+}
+
+.blog-item p {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.read-more {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: var(--transition-normal);
+}
+
+.read-more:hover {
+    color: var(--gray-900);
+}
+
+.read-more i {
+    margin-left: 0.5rem;
+    transition: var(--transition-normal);
+}
+
+.read-more:hover i {
+    transform: translateX(5px);
+}
+
+/*=================================================
+  15. Instagram Feed
+==================================================*/
+.instagram-section {
+    padding: 8rem 0;
+}
+
+.instagram-link {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-top: 1rem;
+    transition: var(--transition-normal);
+}
+
+.instagram-link:hover {
+    color: var(--primary-color);
+}
+
+.instagram-gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.instagram-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.instagram-item img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    transition: var(--transition-normal);
+}
+
+.instagram-item:hover img {
+    transform: scale(1.1);
+}
+
+.insta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.instagram-item:hover .insta-overlay {
+    opacity: 1;
+}
+
+.insta-overlay i {
+    font-size: 3rem;
+    color: #fff;
+}
+
+/*=================================================
+  16. Vantagens e Features
+==================================================*/
+.vantagens-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+
+.vantagem-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: var(--border-radius-md);
+    background-color: #fff;
+    box-shadow: var(--box-shadow-sm);
+    transition: var(--transition-normal);
+}
+
+.vantagem-item:hover {
+    box-shadow: var(--box-shadow-md);
+    transform: translateY(-5px);
+}
+
+.vantagem-icon {
+    font-size: 3.6rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.vantagem-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.vantagem-content p {
+    font-size: 1.4rem;
+    color: var(--gray-600);
+    margin-bottom: 0;
+}
+
+/*=================================================
+  17. Newsletter
+==================================================*/
+.newsletter-section {
+    padding: 5rem 0;
+    background-color: var(--gray-100);
+}
+
+.newsletter-box {
+    background-color: var(--primary-color);
+    padding: 5rem;
+    border-radius: var(--border-radius-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.newsletter-content {
+    flex: 0 0 50%;
+}
+
+.newsletter-content h3 {
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.newsletter-content p {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+}
+
+.newsletter-form {
+    flex: 0 0 45%;
+}
+
+.newsletter-form .form-group {
+    display: flex;
+    width: 100%;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: #fff;
+    font-size: 1.4rem;
+}
+
+.newsletter-form button {
+    flex-shrink: 0;
+    padding: 0 2.5rem;
+    background-color: var(--gray-900);
+    color: #fff;
+    font-weight: 600;
+    transition: var(--transition-normal);
+}
+
+.newsletter-form button:hover {
+    background-color: var(--gray-700);
+}
+
+/*=================================================
+  18. Footer
+==================================================*/
+.footer {
+    background-color: var(--gray-900);
+    color: #fff;
+}
+
+.footer-top {
+    padding: 8rem 0 5rem;
+}
+
+.footer-widgets {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    gap: 3rem;
+}
+
+.footer-widget {
+    margin-bottom: 3rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.footer-logo img {
+    height: 4rem;
+    margin-right: 1rem;
+}
+
+.footer-logo h2 {
+    font-size: 2.4rem;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.about-widget p {
+    color: var(--gray-400);
+    margin-bottom: 2rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.6rem;
+    transition: var(--transition-normal);
+}
+
+.footer-social a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.widget-title {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.widget-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 4rem;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.footer-links li {
+    margin-bottom: 1.2rem;
+}
+
+.footer-links a {
+    color: var(--gray-400);
+    font-size: 1.5rem;
+    transition: var(--transition-normal);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    margin-left: 5px;
+}
+
+.contact-item {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.contact-item .icon {
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.contact-item .text h5 {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item .text p {
+    color: var(--gray-400);
+    margin-bottom: 0;
+}
+
+.footer-bottom {
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    color: var(--gray-500);
+    font-size: 1.4rem;
+}
+
+.payment-methods {
+    display: flex;
+    align-items: center;
+}
+
+.payment-methods span {
+    margin-right: 1.5rem;
+    color: var(--gray-500);
+    font-size: 1.4rem;
+}
+
+.payment-methods img {
+    height: 2.4rem;
+}
+
+/*=================================================
+  19. Back to Top Button
+==================================================*/
+.back-to-top {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    box-shadow: var(--box-shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-normal);
+    z-index: var(--z-fixed);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--gray-900);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+/*=================================================
+  20. Páginas Internas
+==================================================*/
+.page-header {
+    padding: 8rem 0;
+    background-color: var(--gray-100);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/page-header-pattern.png');
+    opacity: 0.1;
+}
+
+.page-header h1 {
+    font-size: 4.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    color: var(--gray-700);
+    position: relative;
+    z-index: 1;
+}
+
+.breadcrumb a {
+    color: var(--gray-700);
+}
+
+.breadcrumb a:hover {
+    color: var(--primary-color);
+}
+
+.breadcrumb .separator {
+    margin: 0 1rem;
+    color: var(--gray-500);
+}
+
+.breadcrumb .current {
+    color: var(--primary-color);
+}
+
+/*=================================================
+  21. Modals e Popups
+==================================================*/
+/* Quick View Modal */
+.quick-view-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-modal);
+    display: none;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 90rem;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: var(--border-radius-md);
+    padding: 3rem;
+}
+
+.close-modal {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: var(--gray-900);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.close-modal:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+.product-quick-view .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1.5rem;
+}
+
+.product-quick-view .col-6 {
+    width: 50%;
+    padding: 0 1.5rem;
+}
+
+.product-image {
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-md);
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    max-height: 40rem;
+    object-fit: contain;
+}
+
+.product-details h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.rating {
+    color: #ffc107;
+    margin-bottom: 1.5rem;
+}
+
+.rating i {
+    margin-right: 0.2rem;
+}
+
+.rating span {
+    color: var(--gray-600);
+    margin-left: 1rem;
+    font-size: 1.4rem;
+}
+
+.price {
+    margin-bottom: 2rem;
+}
+
+.price .current {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.price .old {
+    font-size: 1.6rem;
+    color: var(--gray-600);
+    text-decoration: line-through;
+    margin-left: 1rem;
+}
+
+.description {
+    margin-bottom: 2.5rem;
+}
+
+.product-variations {
+    margin-bottom: 2.5rem;
+}
+
+.product-variations h4 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.sizes {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.size-btn {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid var(--gray-400);
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.size-btn:hover, .size-btn.active {
+    background-color: var(--gray-900);
+    color: #fff;
+    border-color: var(--gray-900);
+}
+
+.colors {
+    display: flex;
+    gap: 1rem;
+}
+
+.color-btn {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition-normal);
+}
+
+.color-btn.active::after, .color-btn:hover::after {
+    content: '';
+    position: absolute;
+    top: -0.4rem;
+    left: -0.4rem;
+    right: -0.4rem;
+    bottom: -0.4rem;
+    border: 1px solid var(--gray-900);
+    border-radius: 50%;
+}
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+}
+
+.qty-btn {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--gray-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.qty-btn:hover {
+    background-color: var(--gray-200);
+}
+
+.qty-input {
+    width: 5rem;
+    height: 4rem;
+    text-align: center;
+    font-weight: 600;
+    border-left: 1px solid var(--gray-300);
+    border-right: 1px solid var(--gray-300);
+}
+
+.product-meta {
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--gray-300);
+    font-size: 1.4rem;
+}
+
+.product-meta p {
+    margin-bottom: 1rem;
+}
+
+.product-meta a {
+    color: var(--primary-color);
+}
+
+/* Newsletter Popup */
+.newsletter-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: var(--z-modal);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    position: relative;
+    width: 80%;
+    max-width: 80rem;
+    background-color: #fff;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    display: flex;
+}
+
+.close-popup {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.8rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    z-index: 2;
+}
+
+.close-popup:hover {
+    transform: rotate(90deg);
+}
+
+.popup-image {
+    width: 40%;
+    position: relative;
+}
+
+.popup-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popup-form {
+    width: 60%;
+    padding: 4rem;
+    background-color: #fff;
+}
+
+.popup-form h3 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.popup-form p {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+}
+
+.popup-form input {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.popup-form button {
+    width: 100%;
+    padding: 1.2rem;
+    font-weight: 600;
+}
+
+.popup-checkbox {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.popup-checkbox input {
+    width: auto;
+    margin-right: 1rem;
+    margin-bottom: 0;
+}
+
+/* Cookie Consent */
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 0;
+    background-color: var(--gray-900);
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1);
+    z-index: var(--z-fixed);
+    display: none;
+}
+
+.cookie-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cookie-content p {
+    color: #fff;
+    margin-bottom: 0;
+    font-size: 1.4rem;
+    padding-right: 2rem;
+}
+
+.cookie-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/*=================================================
+  22. Animações e Transições
+==================================================*/
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.5s ease;
+}
+
+.animate-fadeInLeft {
+    animation: fadeInLeft 0.5s ease;
+}
+
+.animate-fadeInRight {
+    animation: fadeInRight 0.5s ease;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+/*=================================================
+  23. Formulários
+==================================================*/
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--gray-800);
+}
+
+.form-control {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius-md);
+    font-size: 1.4rem;
+    transition: var(--transition-normal);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
+}
+
+textarea.form-control {
+    min-height: 15rem;
+    resize: vertical;
+}
+
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center;
+    background-size: 16px 12px;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form-check-input {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.form-check-label {
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+/*=================================================
+  24. Toast e Notificações
+==================================================*/
+.notification-toast {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    max-width: 35rem;
+    background-color: #fff;
+    box-shadow: var(--box-shadow-md);
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    z-index: var(--z-tooltip);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.3s ease;
+}
+
+.notification-toast.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.toast-icon {
+    margin-right: 1.5rem;
+    font-size: 2.4rem;
+    color: var(--success-color);
+}
+
+.toast-message {
+    font-size: 1.4rem;
+}
+
+.toast-close {
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: var(--gray-600);
+    margin-left: 1rem;
+}
+
+.toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    width: 0;
+    animation: toast-progress 3s linear forwards;
+}
+
+@keyframes toast-progress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+/*
+* Ideal Store - Responsivo
+* Versão: 1.0.0
+* Autor: Desenvolvedor
+* Website: www.idealstore.com.br
+*/
+
+/*=================================================
+  Índice
+==================================================
+01. Media Queries para Desktops Pequenos
+02. Media Queries para Tablets
+03. Media Queries para Smartphones Grandes
+04. Media Queries para Smartphones Pequenos
+==================================================*/
+
+/*=================================================
+  01. Media Queries para Desktops Pequenos
+==================================================*/
+@media (max-width: 1200px) {
+    html {
+        font-size: 60%;
+    }
+    
+    .header-content {
+        padding: 0 1.5rem;
+    }
+    
+    .menu-item {
+        margin: 0 1rem;
+    }
+    
+    .categorias-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .vantagens-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .instagram-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .footer-widgets {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+    
+    .newsletter-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem;
+    }
+    
+    .newsletter-content {
+        flex: 0 0 100%;
+        margin-bottom: 2.5rem;
+    }
+    
+    .newsletter-form {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 50rem;
+        margin: 0 auto;
+    }
+}
+
+/*=================================================
+  02. Media Queries para Tablets
+==================================================*/
+@media (max-width: 992px) {
+    html {
+        font-size: 58%;
+    }
+    
+    .main-nav {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .hero-slide {
+        height: 50rem;
+    }
+    
+    .slide-content {
+        max-width: 60rem;
+    }
+    
+    .slide-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .slide-content h3 {
+        font-size: 4.8rem;
+    }
+    
+    .slide-content p {
+        font-size: 1.6rem;
+    }
+    
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .popup-content {
+        flex-direction: column;
+    }
+    
+    .popup-image {
+        width: 100%;
+        height: 25rem;
+    }
+    
+    .popup-form {
+        width: 100%;
+    }
+    
+    .product-quick-view .row {
+        flex-direction: column;
+    }
+    
+    .product-quick-view .col-6 {
+        width: 100%;
+    }
+    
+    .product-image {
+        margin-bottom: 3rem;
+    }
+}
+
+/*=================================================
+  03. Media Queries para Smartphones Grandes
+==================================================*/
+@media (max-width: 768px) {
+    html {
+        font-size: 56%;
+    }
+    
+    .top-bar-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .top-contact a {
+        margin-right: 1.5rem;
+    }
+    
+    .hero-slide {
+        height: 45rem;
+    }
+    
+    .slide-content {
+        margin-left: 5%;
+        text-align: center;
+    }
+    
+    .slide-buttons {
+        justify-content: center;
+    }
+    
+    .categorias-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .vantagens-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .instagram-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-widgets {
+        grid-template-columns: 1fr;
+    }
+    
+    .cookie-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .cookie-content p {
+        padding-right: 0;
+        text-align: center;
+    }
+    
+    .cookie-buttons {
+        justify-content: center;
+    }
+}
+
+/*=================================================
+  04. Media Queries para Smartphones Pequenos
+==================================================*/
+@media (max-width: 576px) {
+    html {
+        font-size: 55%;
+    }
+    
+    .logo-img {
+        height: 3.5rem;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .header-actions .action-btn {
+        margin-left: 1.5rem;
+    }
+    
+    .hero-slide {
+        height: 40rem;
+    }
+    
+    .slide-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .slide-content h3 {
+        font-size: 3.6rem;
+    }
+    
+    .slide-content p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .slide-buttons {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    
+    .slide-buttons .btn {
+        width: 100%;
+    }
+    
+    .section-heading .main-heading {
+        font-size: 2.8rem;
+    }
+    
+    .tab-nav {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .tab-nav li {
+        padding: 0.8rem 0;
+    }
+    
+    .tab-nav li.active::after {
+        display: none;
+    }
+    
+    .produto-tabs {
+        margin-bottom: 3rem;
+    }
+    
+    .promo-content h2 {
+        font-size: 3.2rem;
+    }
+    
+    .product-actions {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .quantity {
+        width: 100%;
+    }
+    
+    .notification-toast {
+        max-width: calc(100% - 3rem);
+        left: 1.5rem;
+        right: 1.5rem;
+    }
+    
+    .mobile-menu {
+        width: 100%;
+    }
+}
