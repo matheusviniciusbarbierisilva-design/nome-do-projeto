@@ -2,58 +2,35 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ideal Store - Moda Masculina & Feminina</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ideal Store - A melhor loja de roupas</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
 
-<header class="navbar">
-    <h1 class="logo">IDEAL STORE</h1>
+<header>
+    <h1>Ideal Store</h1>
     <nav>
-        <a href="index.html">Home</a>
         <a href="produtos.html">Produtos</a>
         <a href="carrinho.html">Carrinho</a>
         <a href="login.html">Login</a>
     </nav>
 </header>
 
-<section class="hero">
-    <h2>Moda que combina com você</h2>
-    <p>Qualidade premium, conforto e estilo para todas as ocasiões.</p>
-    <a class="btn" href="produtos.html">Ver Produtos</a>
-</section>
+<div class="hero">
+    <h2>Estilo que veste sua identidade</h2>
+</div>
 
-<section class="produtos-destaque">
-    <h2>Destaques</h2>
+<h2 style="text-align:center; margin-top:40px;">Novidades</h2>
 
-    <div class="grid">
-        <div class="produto">
-            <img src="https://via.placeholder.com/300x350" />
-            <h3>Camiseta Premium</h3>
-            <p>R$ 79,90</p>
-        </div>
+<div class="products" id="produtosDestaque"></div>
 
-        <div class="produto">
-            <img src="https://via.placeholder.com/300x350" />
-            <h3>Calça Confort</h3>
-            <p>R$ 129,90</p>
-        </div>
-
-        <div class="produto">
-            <img src="https://via.placeholder.com/300x350" />
-            <h3>Jaqueta Urban</h3>
-            <p>R$ 199,90</p>
-        </div>
-    </div>
-</section>
+<script src="assets/js/produtos.js"></script>
+<script>
+renderizarProdutos("produtosDestaque", 3)
+</script>
 
 <footer>
-    <p>Ideal Store © 2025 — Todos os direitos reservados</p>
-    <a href="sobre.html">Sobre nós</a> • 
-    <a href="politica.html">Política de Privacidade</a> •
-    <a href="contato.html">Contato</a>
+    Ideal Store © 2025 — Todos os direitos reservados.
 </footer>
 
 </body>
@@ -62,51 +39,31 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos - Ideal Store</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
 
-<header class="navbar">
-    <h1 class="logo">IDEAL STORE</h1>
+<header>
+    <h1>Ideal Store</h1>
     <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html">Início</a>
         <a href="carrinho.html">Carrinho</a>
         <a href="login.html">Login</a>
     </nav>
 </header>
 
-<h2 class="titulo">Todos os Produtos</h2>
+<h2 style="text-align:center; margin-top:40px;">Todos os Produtos</h2>
 
-<div class="grid">
+<div class="products" id="listaProdutos"></div>
 
-    <div class="produto">
-        <img src="https://via.placeholder.com/300x350" />
-        <h3>Camiseta Premium</h3>
-        <p>R$ 79,90</p>
-        <a class="btn" href="produto.html?id=1">Ver produto</a>
-    </div>
-
-    <div class="produto">
-        <img src="https://via.placeholder.com/300x350" />
-        <h3>Calça Confort</h3>
-        <p>R$ 129,90</p>
-        <a class="btn" href="produto.html?id=2">Ver produto</a>
-    </div>
-
-    <div class="produto">
-        <img src="https://via.placeholder.com/300x350" />
-        <h3>Jaqueta Urban</h3>
-        <p>R$ 199,90</p>
-        <a class="btn" href="produto.html?id=3">Ver produto</a>
-    </div>
-
-</div>
+<script src="assets/js/produtos.js"></script>
+<script>
+renderizarProdutos("listaProdutos")
+</script>
 
 <footer>
-    <p>Ideal Store © 2025</p>
+    Ideal Store © 2025
 </footer>
 
 </body>
@@ -115,33 +72,28 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produto - Ideal Store</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
 
-<header class="navbar">
-    <h1 class="logo">IDEAL STORE</h1>
+<header>
+    <h1>Ideal Store</h1>
     <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html">Início</a>
         <a href="carrinho.html">Carrinho</a>
-        <a href="login.html">Login</a>
     </nav>
 </header>
 
-<div class="produto-detalhe">
-    <img src="https://via.placeholder.com/350x400" />
-    <div>
-        <h2 id="nome-produto">Camiseta Premium</h2>
-        <p id="preco-produto">R$ 79,90</p>
-        <button class="btn">Adicionar ao carrinho</button>
-    </div>
-</div>
+<div id="produtoInfo" style="padding:40px;"></div>
+
+<script src="assets/js/produtos.js"></script>
+<script>
+renderizarProdutoIndividual()
+</script>
 
 <footer>
-    <p>Ideal Store © 2025</p>
+    Ideal Store © 2025
 </footer>
 
 </body>
@@ -150,30 +102,27 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho - Ideal Store</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
 
-<header class="navbar">
-    <h1 class="logo">IDEAL STORE</h1>
+<header>
+    <h1>Ideal Store</h1>
     <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html">Início</a>
         <a href="produtos.html">Produtos</a>
-        <a href="login.html">Login</a>
     </nav>
 </header>
 
-<h2 class="titulo">Seu Carrinho</h2>
+<h2 style="text-align:center; margin-top:40px;">Carrinho</h2>
 
-<div class="carrinho-vazio">
-    <p>Seu carrinho está vazio 😢</p>
-</div>
+<div id="itensCarrinho" style="padding:40px;"></div>
+
+<script src="assets/js/carrinho.js"></script>
 
 <footer>
-    <p>Ideal Store © 2025</p>
+    Ideal Store © 2025
 </footer>
 
 </body>
@@ -182,25 +131,25 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login — Ideal Store</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login - Ideal Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
 
-<header class="navbar">
-    <h1 class="logo">IDEAL STORE</h1>
+<header>
+    <h1>Ideal Store</h1>
 </header>
 
-<div class="login-box">
-    <h2>Entrar</h2>
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Senha">
-    <button class="btn">Entrar</button>
+<div style="max-width:400px; margin:50px auto; background:white; padding:30px; border-radius:10px; box-shadow:0 0 15px #0003;">
+    <h2>Login</h2>
+    <input id="email" type="text" placeholder="Email" style="width:100%; padding:12px; margin-top:15px;">
+    <input id="senha" type="password" placeholder="Senha" style="width:100%; padding:12px; margin-top:15px;">
+    <button onclick="fazerLogin()" style="width:100%; padding:12px; margin-top:20px;">Entrar</button>
 
-    <p>Não tem conta? <a href="register.html">Criar conta</a></p>
+    <p style="margin-top:20px;">Não tem conta? <a href="register.html">Criar conta</a></p>
 </div>
+
+<script src="assets/js/auth.js"></script>
 
 </body>
 </html>
@@ -208,106 +157,26 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Conta — Ideal Store</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Criar Conta - Ideal Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
 
-<header class="navbar">
-    <h1 class="logo">IDEAL STORE</h1>
+<header>
+    <h1>Ideal Store</h1>
 </header>
 
-<div class="login-box">
+<div style="max-width:400px; margin:50px auto; background:white; padding:30px; border-radius:10px; box-shadow:0 0 15px #0003;">
     <h2>Criar Conta</h2>
-    <input type="text" placeholder="Nome completo">
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Senha">
-    <button class="btn">Registrar</button>
+    <input id="nome" type="text" placeholder="Nome completo" style="width:100%; padding:12px; margin-top:15px;">
+    <input id="email" type="text" placeholder="Email" style="width:100%; padding:12px; margin-top:15px;">
+    <input id="senha" type="password" placeholder="Senha" style="width:100%; padding:12px; margin-top:15px;">
+    <button onclick="registrar()" style="width:100%; padding:12px; margin-top:20px;">Criar Conta</button>
+
+    <p style="margin-top:20px;">Já possui conta? <a href="login.html">Entrar</a></p>
 </div>
+
+<script src="assets/js/auth.js"></script>
 
 </body>
 </html>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    background: black;
-    color: white;
-}
-
-.navbar a {
-    color: white;
-    margin-left: 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.logo {
-    font-size: 22px;
-    letter-spacing: 2px;
-}
-
-.hero {
-    height: 300px;
-    background: url('https://via.placeholder.com/1200x400') center/cover;
-    text-align: center;
-    color: white;
-    padding-top: 80px;
-}
-
-.btn {
-    background: black;
-    color: white;
-    padding: 8px 20px;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 6px;
-    margin-top: 10px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.produto {
-    background: white;
-    padding: 15px;
-    border-radius: 6px;
-    text-align: center;
-}
-
-.produto img { width: 100%; border-radius: 6px; }
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
-    color: white;
-    margin-top: 40px;
-}
-
-.login-box {
-    width: 300px;
-    margin: 60px auto;
-    background: white;
-    padding: 25px;
-    border-radius: 6px;
-    text-align: center;
-}
-
-.login-box input {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 10px;
-}
