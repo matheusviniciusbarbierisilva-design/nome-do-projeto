@@ -1,237 +1,56 @@
-ideal-store/
-│── index.html
-│── produtos.html
-│── produto.html
-│── contato.html
-│── sobre.html
-│── promocoes.html
-│── admin.html
-│── login.html
-│── carrinho.html
-│
-├── assets/
-│   ├── css/
-│   │    └── style.css
-│   ├── js/
-│   │    ├── produtos.js
-│   │    ├── script.js
-│   │    └── busca.js
-│   └── img/
-│        └── (imagens da loja)
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Ideal Store - Moda Premium</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ideal Store</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<header>
-    <img src="assets/img/logo.png" class="logo">
+  <header>
+    <div class="logo">Ideal Store</div>
     <nav>
-        <a href="index.html">Início</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="promocoes.html">Promoções</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="contato.html">Contato</a>
-        <a href="carrinho.html">Carrinho</a>
-        <a href="login.html">Login</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="promo.html">Promoções</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<div class="busca-box">
-    <input id="campo-busca" placeholder="Buscar produtos...">
-    <button onclick="buscar()">Buscar</button>
-</div>
+  <section class="hero">
+    <h1>Bem-vindo à Ideal Store</h1>
+    <p>Moda e estilo ao seu alcance!</p>
+    <a href="produtos.html" class="btn">Ver Produtos</a>
+  </section>
 
-<div class="slider">
-    <div class="slide fade"><img src="assets/img/slide1.jpg"></div>
-    <div class="slide fade"><img src="assets/img/slide2.jpg"></div>
-    <div class="slide fade"><img src="assets/img/slide3.jpg"></div>
-</div>
+  <section class="destaques">
+    <h2>Produtos em Destaque</h2>
+    <div class="produtos-container">
+      <div class="produto">
+        <img src="images/camisa1.jpg" alt="Camisa 1">
+        <h3>Camisa Casual</h3>
+        <p>R$ 99,90</p>
+      </div>
+      <div class="produto">
+        <img src="images/camisa2.jpg" alt="Camisa 2">
+        <h3>Camisa Estampada</h3>
+        <p>R$ 119,90</p>
+      </div>
+      <div class="produto">
+        <img src="images/camisa3.jpg" alt="Camisa 3">
+        <h3>Camisa Social</h3>
+        <p>R$ 149,90</p>
+      </div>
+    </div>
+  </section>
 
-<h2 class="titulo">Destaques</h2>
-<section id="lista-destaques"></section>
+  <footer>
+    <p>&copy; 2025 Ideal Store. Todos os direitos reservados.</p>
+  </footer>
 
-<footer>
-    © 2025 Ideal Store - Todos os direitos reservados.
-</footer>
-
-<script src="assets/js/script.js"></script>
-<script src="assets/js/busca.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Produtos - Ideal Store</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-<header>
-    <img src="assets/img/logo.png" class="logo">
-    <nav>
-        <a href="index.html">Início</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="promocoes.html">Promoções</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="contato.html">Contato</a>
-        <a href="carrinho.html">Carrinho</a>
-        <a href="login.html">Login</a>
-    </nav>
-</header>
-
-<h2 class="titulo">Todos os Produtos</h2>
-<section id="lista-produtos"></section>
-
-<footer>© 2025 Ideal Store</footer>
-<script src="assets/js/produtos.js"></script>
-<script src="assets/js/script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Produto - Ideal Store</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-<header>
-    <img src="assets/img/logo.png" class="logo">
-    <nav>
-        <a href="index.html">Início</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="carrinho.html">Carrinho</a>
-    </nav>
-</header>
-
-<div id="info-produto"></div>
-
-<footer>© 2025 Ideal Store</footer>
-<script src="assets/js/produtos.js"></script>
-<script src="assets/js/script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Promoções - Ideal Store</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-<header>
-    <img src="assets/img/logo.png" class="logo">
-    <nav>
-        <a href="index.html">Início</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="promocoes.html">Promoções</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="contato.html">Contato</a>
-        <a href="carrinho.html">Carrinho</a>
-    </nav>
-</header>
-
-<h2 class="titulo">Promoções Ativas</h2>
-<section id="lista-promocoes"></section>
-
-<footer>© 2025 Ideal Store</footer>
-<script src="assets/js/produtos.js"></script>
-<script src="assets/js/script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Sobre - Ideal Store</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-<header>
-    <img src="assets/img/logo.png" class="logo">
-    <nav>
-        <a href="index.html">Início</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="promocoes.html">Promoções</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="contato.html">Contato</a>
-    </nav>
-</header>
-
-<section class="sobre">
-    <h2>Sobre a Ideal Store</h2>
-    <p>A Ideal Store é uma marca de moda premium focada em estilo, qualidade e inovação.</p>
-</section>
-
-<footer>© 2025 Ideal Store</footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Contato - Ideal Store</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-<header>
-    <img src="assets/img/logo.png" class="logo">
-    <nav>
-        <a href="index.html">Início</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="promocoes.html">Promoções</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="contato.html">Contato</a>
-    </nav>
-</header>
-
-<section class="contato">
-    <h2>Fale Conosco</h2>
-    <input placeholder="Seu nome">
-    <input placeholder="Seu e-mail">
-    <textarea placeholder="Sua mensagem"></textarea>
-    <button>Enviar</button>
-</section>
-
-<footer>© 2025 Ideal Store</footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Admin - Ideal Store</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-<header>
-    <h1>Painel Administrativo</h1>
-    <nav>
-        <a href="index.html">Loja</a>
-    </nav>
-</header>
-
-<section class="admin">
-    <h2>Enviar Imagem</h2>
-    <input type="file" id="arquivo">
-    <button onclick="uploadImagem()">Enviar</button>
-
-    <h2>Cadastrar Produto</h2>
-    <input id="p-nome" placeholder="Nome do produto">
-    <input id="p-preco" type="number" placeholder="Preço">
-    <input id="p-imagem" placeholder="URL da imagem">
-    <textarea id="p-desc" placeholder="Descrição"></textarea>
-    <button onclick="cadastrarProduto()">Cadastrar</button>
-
-    <h2>Produtos Cadastrados</h2>
-    <div id="lista-admin"></div>
-</section>
-
-<script src="assets/js/produtos.js"></script>
-<script src="assets/js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
