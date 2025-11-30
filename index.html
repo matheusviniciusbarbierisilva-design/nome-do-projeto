@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Ideal Store - A melhor loja de roupas</title>
+    <title>Ideal Store - Moda Premium</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -10,33 +10,25 @@
 <header>
     <h1>Ideal Store</h1>
     <nav>
+        <a href="index.html">Início</a>
         <a href="produtos.html">Produtos</a>
         <a href="carrinho.html">Carrinho</a>
         <a href="login.html">Login</a>
     </nav>
 </header>
 
-<div class="hero">
-    <h2>Estilo que veste sua identidade</h2>
-</div>
+<section class="banner">
+    <h2>Moda Premium • Preto & Dourado</h2>
+    <p>O estilo que combina com você.</p>
+</section>
 
-<h2 style="text-align:center; margin-top:40px;">Novidades</h2>
+<section id="lista-produtos"></section>
 
-<div class="products" id="produtosDestaque"></div>
-
-<script src="assets/js/produtos.js"></script>
-<script>
-renderizarProdutos("produtosDestaque", 3)
-</script>
-
-<footer>
-    Ideal Store © 2025 — Todos os direitos reservados.
-</footer>
-
+<script src="assets/js/script.js"></script>
 </body>
 </html>
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Produtos - Ideal Store</title>
@@ -48,28 +40,20 @@ renderizarProdutos("produtosDestaque", 3)
     <h1>Ideal Store</h1>
     <nav>
         <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
         <a href="carrinho.html">Carrinho</a>
         <a href="login.html">Login</a>
     </nav>
 </header>
 
-<h2 style="text-align:center; margin-top:40px;">Todos os Produtos</h2>
+<h2 class="titulo">Todos os Produtos</h2>
+<section id="lista-produtos"></section>
 
-<div class="products" id="listaProdutos"></div>
-
-<script src="assets/js/produtos.js"></script>
-<script>
-renderizarProdutos("listaProdutos")
-</script>
-
-<footer>
-    Ideal Store © 2025
-</footer>
-
+<script src="assets/js/script.js"></script>
 </body>
 </html>
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Produto - Ideal Store</title>
@@ -81,25 +65,19 @@ renderizarProdutos("listaProdutos")
     <h1>Ideal Store</h1>
     <nav>
         <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
         <a href="carrinho.html">Carrinho</a>
+        <a href="login.html">Login</a>
     </nav>
 </header>
 
-<div id="produtoInfo" style="padding:40px;"></div>
+<div id="info-produto"></div>
 
-<script src="assets/js/produtos.js"></script>
-<script>
-renderizarProdutoIndividual()
-</script>
-
-<footer>
-    Ideal Store © 2025
-</footer>
-
+<script src="assets/js/script.js"></script>
 </body>
 </html>
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Carrinho - Ideal Store</title>
@@ -112,23 +90,22 @@ renderizarProdutoIndividual()
     <nav>
         <a href="index.html">Início</a>
         <a href="produtos.html">Produtos</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="login.html">Login</a>
     </nav>
 </header>
 
-<h2 style="text-align:center; margin-top:40px;">Carrinho</h2>
+<h2 class="titulo">Seu Carrinho</h2>
 
-<div id="itensCarrinho" style="padding:40px;"></div>
+<div id="lista-carrinho"></div>
 
-<script src="assets/js/carrinho.js"></script>
+<h3 class="total">Total: R$ <span id="total">0,00</span></h3>
 
-<footer>
-    Ideal Store © 2025
-</footer>
-
+<script src="assets/js/script.js"></script>
 </body>
 </html>
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Login - Ideal Store</title>
@@ -140,206 +117,72 @@ renderizarProdutoIndividual()
     <h1>Ideal Store</h1>
 </header>
 
-<div style="max-width:400px; margin:50px auto; background:white; padding:30px; border-radius:10px; box-shadow:0 0 15px #0003;">
-    <h2>Login</h2>
-    <input id="email" type="text" placeholder="Email" style="width:100%; padding:12px; margin-top:15px;">
-    <input id="senha" type="password" placeholder="Senha" style="width:100%; padding:12px; margin-top:15px;">
-    <button onclick="fazerLogin()" style="width:100%; padding:12px; margin-top:20px;">Entrar</button>
-
-    <p style="margin-top:20px;">Não tem conta? <a href="register.html">Criar conta</a></p>
+<div class="login-box">
+    <h2>Entrar</h2>
+    <input type="email" id="email" placeholder="Seu e-mail">
+    <input type="password" id="senha" placeholder="Sua senha">
+    <button onclick="login()">Login</button>
 </div>
-
-<script src="assets/js/auth.js"></script>
 
 </body>
 </html>
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Criar Conta - Ideal Store</title>
+    <title>Painel do Cliente - Ideal Store</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <header>
     <h1>Ideal Store</h1>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="carrinho.html">Carrinho</a>
+    </nav>
 </header>
 
-<div style="max-width:400px; margin:50px auto; background:white; padding:30px; border-radius:10px; box-shadow:0 0 15px #0003;">
-    <h2>Criar Conta</h2>
-    <input id="nome" type="text" placeholder="Nome completo" style="width:100%; padding:12px; margin-top:15px;">
-    <input id="email" type="text" placeholder="Email" style="width:100%; padding:12px; margin-top:15px;">
-    <input id="senha" type="password" placeholder="Senha" style="width:100%; padding:12px; margin-top:15px;">
-    <button onclick="registrar()" style="width:100%; padding:12px; margin-top:20px;">Criar Conta</button>
+<section class="painel">
+    <h2>Bem-vindo, <span id="cliente-email"></span></h2>
+    <button onclick="logout()">Sair</button>
+</section>
 
-    <p style="margin-top:20px;">Já possui conta? <a href="login.html">Entrar</a></p>
-</div>
-
-<script src="assets/js/auth.js"></script>
-
+<script src="assets/js/script.js"></script>
 </body>
 </html>
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Ideal Store – Produtos</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Admin - Ideal Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<header class="topo">
-  <h1>Ideal Store</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="produtos.html" class="ativo">Produtos</a>
-    <a href="carrinho.html">Carrinho</a>
-    <a href="login.html">Login</a>
-  </nav>
+<header>
+    <h1>Painel Administrativo</h1>
+    <nav>
+        <a href="index.html">Loja</a>
+    </nav>
 </header>
 
-<section class="lista-produtos" id="produtosLista"></section>
+<section class="admin">
+    <h2>Cadastrar Produto</h2>
 
-<script src="script.js"></script>
+    <input id="p-nome" placeholder="Nome do produto">
+    <input id="p-preco" type="number" placeholder="Preço">
+    <input id="p-imagem" placeholder="URL da imagem">
+    <textarea id="p-desc" placeholder="Descrição"></textarea>
+
+    <button onclick="cadastrarProduto()">Cadastrar</button>
+
+    <h2>Produtos cadastrados</h2>
+    <div id="lista-admin"></div>
+</section>
+
+<script src="assets/js/script.js"></script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Ideal Store – Produto</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-<header class="topo">
-  <h1>Ideal Store</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="produtos.html">Produtos</a>
-    <a href="carrinho.html">Carrinho</a>
-  </nav>
-</header>
-
-<div class="produto-container" id="produtoDetalhes"></div>
-
-<script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Carrinho – Ideal Store</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="topo">
-  <h1>Ideal Store</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="produtos.html">Produtos</a>
-    <a href="carrinho.html" class="ativo">Carrinho</a>
-  </nav>
-</header>
-
-<h2 class="titulo-pagina">Seu Carrinho</h2>
-
-<div id="listaCarrinho" class="carrinho-container"></div>
-
-<button class="botao-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
-
-<script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Login – Ideal Store</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="topo">
-  <h1>Ideal Store</h1>
-</header>
-
-<div class="login-box">
-  <h2>Entrar</h2>
-  <input id="loginEmail" type="email" placeholder="Email">
-  <input id="loginSenha" type="password" placeholder="Senha">
-  <button onclick="fazerLogin()">Entrar</button>
-
-  <p>Não tem conta? <a href="#" onclick="criarContaFake()">Criar Conta</a></p>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Painel do Cliente – Ideal Store</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="topo">
-  <h1>Ideal Store</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="produtos.html">Produtos</a>
-    <a href="carrinho.html">Carrinho</a>
-    <a href="#" onclick="logout()">Sair</a>
-  </nav>
-</header>
-
-<h2 class="titulo-pagina">Bem-vindo(a), <span id="nomeCliente"></span></h2>
-
-<div class="painel-cliente-box">
-  <p>Email: <span id="emailCliente"></span></p>
-  <p>Últimos pedidos (simulados):</p>
-  <ul>
-    <li>Pedido #001 — Entregue</li>
-    <li>Pedido #002 — Em transporte</li>
-  </ul>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Admin – Ideal Store</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="topo">
-  <h1>Painel Admin</h1>
-  <nav>
-    <a href="index.html">Loja</a>
-  </nav>
-</header>
-
-<h2 class="titulo-pagina">Cadastrar Produto</h2>
-
-<div class="admin-box">
-  <input id="admNome" type="text" placeholder="Nome do produto">
-  <input id="admPreco" type="number" placeholder="Preço">
-  <input id="admImg" type="text" placeholder="URL da imagem">
-  <button onclick="addProduto()">Adicionar</button>
-</div>
-
-<h2 class="titulo-pagina">Produtos Cadastrados</h2>
-<div id="produtosAdmin" class="admin-lista"></div>
-
-<script src="script.js"></script>
-</body>
-</html>
