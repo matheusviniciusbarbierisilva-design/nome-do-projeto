@@ -139,8 +139,7 @@ body {
 
 /* --- SEÇÃO HERO --- */
 .hero-section {
-    /* O caminho da imagem de fundo está ajustado para sua estrutura: */
-    /* Volta 1 nível (sai de css), volta 1 nível (sai de ativos) */
+    /* CORRIGIDO: Caminho ajustado para sair de 'css' e 'ativos' */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../images/hero_background_placeholder.jpg') no-repeat center center/cover;
     height: 450px;
     display: flex;
@@ -365,7 +364,6 @@ body {
 }
 
 /* --- RESPONSIVIDADE (MOBILE) - SINTAXE CORRIGIDA */
-/* Mudei @midia e largura-maxima para @media e max-width */
 @media (max-width: 768px) {
     .header-content {
         padding: 10px 0;
@@ -423,7 +421,6 @@ body {
 /* CORREÇÃO DO BLOCO DE FILTRO MOBILE */
 @media (max-width: 600px) {
     .filter-bar {
-        /* Mudei flexão direcional e alinhar-itens para flex-direction e align-items */
         flex-direction: column;
         align-items: stretch;
     }
