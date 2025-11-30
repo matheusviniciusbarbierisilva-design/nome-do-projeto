@@ -1,7 +1,7 @@
 /* Variáveis de Cores */
 :root {
-    --primary-color: #A3294E;
-    --secondary-color: #CE4760;
+    --primary-color: #A3294E; 
+    --secondary-color: #CE4760; 
     --text-dark: #333333;
     --text-light: #f5f5f5;
     --bg-light: #ffffff;
@@ -79,7 +79,7 @@ body {
 }
 
 .btn-instagram {
-    background-color: #C13584;
+    background-color: #C13584; 
     color: white;
 }
 
