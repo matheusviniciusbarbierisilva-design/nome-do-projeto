@@ -1,103 +1,100 @@
- {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: #111;
-    color: white;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
 }
 
+/* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: #000;
-    border-bottom: 2px solid #D4AF37;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
 }
 
 header .logo {
-    width: 140px;
+  font-size: 1.8em;
+  font-weight: bold;
 }
 
-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
-nav a:hover {
-    color: #D4AF37;
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
 }
 
-.titulo {
-    text-align: center;
-    margin: 30px 0;
-    color: #D4AF37;
-    font-size: 28px;
+header nav ul li a:hover {
+  color: #f0a500;
 }
 
-/* Slider */
-.slider {
-    max-width: 100%;
-    position: relative;
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: url('../images/banner.jpg') center/cover no-repeat;
+  color: #fff;
 }
 
-.slide img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
+.hero .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #f0a500;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
-/* Cards */
-#lista-produtos, #lista-destaques, #lista-promocoes {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+.hero .btn:hover {
+  background-color: #222;
 }
 
-.card {
-    background: #000;
-    border: 2px solid #D4AF37;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
+/* Produtos */
+.destaques {
+  padding: 50px 20px;
+  text-align: center;
 }
 
-.card:hover {
-    transform: scale(1.05);
+.produtos-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+.produto {
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 200px;
+  border-radius: 8px;
 }
 
-.card button {
-    width: 100%;
-    padding: 10px;
-    background: #D4AF37;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 8px;
+.produto img {
+  width: 100%;
+  border-radius: 8px;
 }
 
-/* Responsivo */
-@media(max-width: 700px) {
-    header {
-        flex-direction: column;
-    }
-
-    nav a {
-        margin: 5px;
-    }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+  margin-top: 40px;
 }
