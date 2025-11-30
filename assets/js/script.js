@@ -1,136 +1,150 @@
-// ===== PRODUTOS PADRÃO =====
 let produtos = JSON.parse(localStorage.getItem("produtos")) || [
-  {id:1, nome:"Camisa Premium Black", preco:199, img:"img/camisa1.jpg"},
-  {id:2, nome:"Camiseta Gold Edition", preco:249, img:"img/camisa2.jpg"},
-  {id:3, nome:"Moletom Ideal Lux", preco:349, img:"img/moletom.jpg"}
+    {
+        id: 1,
+        nome: "Camisa Premium Ideal Gold",
+        preco: 299.90,
+        imagem: "assets/img/camisa1.jpg",
+        descricao: "Modelo exclusivo com detalhes dourados."
+    }
 ];
 
-function salvarProdutos(){
-  localStorage.setItem("produtos", JSON.stringify(produtos));
+function salvarProdutos() {
+    localStorage.setItem("produtos", JSON.stringify(produtos));
 }
 
-// ===== LISTAR PRODUTOS =====
-if(document.getElementById("produtosLista")){
-  let area = document.getElementById("produtosLista");
-  area.innerHTML = produtos.map(p => `
-     <div class="card-produto">
-        <img src="${p.img}">
-        <h3>${p.nome}</h3>
-        <p class="preco">R$ ${p.preco}</p>
-        <a href="produto.html?id=${p.id}" class="botao">Ver Produto</a>
-     </div>
-  `).join("");
+// LISTAR PRODUTOS
+function renderProdutos() {
+    let area = document.getElementById("lista-produtos");
+    if (!area) return;
+
+    area.innerHTML = "";
+
+    produtos.forEach(p => {
+        area.innerHTML += `
+            <div class="produto">
+                <img src="${p.imagem}">
+                <h3>${p.nome}</h3>
+                <p>R$ ${p.preco}</p>
+                <a href="produto.html?id=${p.id}">
+                    <button>Ver mais</button>
+                </a>
+            </div>
+        `;
+    });
 }
 
-// ===== DETALHES PRODUTO =====
-if(document.getElementById("produtoDetalhes")){
-  const url = new URLSearchParams(location.search);
-  const id = url.get("id");
-  const p = produtos.find(x => x.id == id);
+renderProdutos();
 
-  document.getElementById("produtoDetalhes").innerHTML = `
-    <img src="${p.img}" class="produto-img">
-    <div class="produto-info">
-      <h2>${p.nome}</h2>
-      <p class="preco">R$ ${p.preco}</p>
-      <button onclick="addCarrinho(${p.id})" class="botao">Adicionar ao Carrinho</button>
-    </div>
-  `;
+// PÁGINA DE PRODUTO
+function renderProduto() {
+    let area = document.getElementById("info-produto");
+    if (!area) return;
+
+    let params = new URLSearchParams(window.location.search);
+    let id = parseInt(params.get("id"));
+
+    let p = produtos.find(x => x.id === id);
+
+    area.innerHTML = `
+        <div class="produto">
+            <img src="${p.imagem}">
+            <h2>${p.nome}</h2>
+            <h3>R$ ${p.preco}</h3>
+            <p>${p.descricao}</p>
+            <button onclick="addCarrinho(${p.id})">Adicionar ao carrinho</button>
+        </div>
+    `;
 }
 
-// ===== CARRINHO =====
+// CARRINHO
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-function addCarrinho(id){
-  carrinho.push(id);
-  localStorage.setItem("carrinho", JSON.stringify(carrinho));
-  alert("Adicionado ao carrinho!");
+function salvarCarrinho() {
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
 }
 
-if(document.getElementById("listaCarrinho")){
-  let area = document.getElementById("listaCarrinho");
-
-  if(carrinho.length === 0){
-    area.innerHTML = "<p>Seu carrinho está vazio.</p>";
-  } else {
-    area.innerHTML = carrinho.map(id => {
-      let p = produtos.find(x => x.id === id);
-      return `
-        <div class="item-carrinho">
-          <img src="${p.img}">
-          <p>${p.nome}</p>
-          <span>R$ ${p.preco}</span>
-        </div>
-      `;
-    }).join("");
-  }
+function addCarrinho(id) {
+    let p = produtos.find(x => x.id === id);
+    carrinho.push(p);
+    salvarCarrinho();
+    alert("Adicionado ao carrinho!");
 }
 
-function finalizarCompra(){
-  alert("Compra finalizada! (simulada)");
-  localStorage.removeItem("carrinho");
-  location.reload();
+function renderCarrinho() {
+    let area = document.getElementById("lista-carrinho");
+    if (!area) return;
+
+    area.innerHTML = "";
+    let total = 0;
+
+    carrinho.forEach((p, i) => {
+        total += p.preco;
+        area.innerHTML += `
+            <div class="produto">
+                <img src="${p.imagem}">
+                <h3>${p.nome}</h3>
+                <p>R$ ${p.preco}</p>
+                <button onclick="remover(${i})">Remover</button>
+            </div>
+        `;
+    });
+
+    document.getElementById("total").innerText = total.toFixed(2);
 }
 
-// ===== LOGIN FAKE =====
-function fazerLogin(){
-  let email = document.getElementById("loginEmail").value;
-  let senha = document.getElementById("loginSenha").value;
-
-  if(email === "" || senha === ""){
-    alert("Preencha tudo!");
-    return;
-  }
-
-  localStorage.setItem("usuario", JSON.stringify({email, nome:"Cliente Ideal"}));
-  location.href = "painel-cliente.html";
+function remover(i) {
+    carrinho.splice(i, 1);
+    salvarCarrinho();
+    renderCarrinho();
 }
 
-function criarContaFake(){
-  alert("Conta criada! (simulado)");
+// LOGIN
+function login() {
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+
+    localStorage.setItem("usuario", email);
+    window.location.href = "painel-cliente.html";
 }
 
-if(document.getElementById("nomeCliente")){
-  let u = JSON.parse(localStorage.getItem("usuario"));
-  if(!u) location.href = "login.html";
-
-  document.getElementById("nomeCliente").innerText = u.nome;
-  document.getElementById("emailCliente").innerText = u.email;
+function logout() {
+    localStorage.removeItem("usuario");
+    window.location.href = "index.html";
 }
 
-function logout(){
-  localStorage.removeItem("usuario");
-  location.href = "index.html";
+// PAINEL CLIENTE
+function painelCliente() {
+    let span = document.getElementById("cliente-email");
+    if (span) span.innerText = localStorage.getItem("usuario");
 }
 
-// ===== ADMIN =====
-function addProduto(){
-  let nome = document.getElementById("admNome").value;
-  let preco = parseFloat(document.getElementById("admPreco").value);
-  let img = document.getElementById("admImg").value;
+// ADMIN
+function cadastrarProduto() {
+    let nome = document.getElementById("p-nome").value;
+    let preco = parseFloat(document.getElementById("p-preco").value);
+    let imagem = document.getElementById("p-imagem").value;
+    let descricao = document.getElementById("p-desc").value;
 
-  let novo = {
-    id: produtos.length + 1,
-    nome,
-    preco,
-    img
-  };
+    let novo = { id: Date.now(), nome, preco, imagem, descricao };
 
-  produtos.push(novo);
-  salvarProdutos();
-  mostrarAdmin();
+    produtos.push(novo);
+    salvarProdutos();
+    listarAdmin();
 }
 
-function mostrarAdmin(){
-  if(!document.getElementById("produtosAdmin")) return;
+function listarAdmin() {
+    let area = document.getElementById("lista-admin");
+    if (!area) return;
 
-  document.getElementById("produtosAdmin").innerHTML = produtos.map(p=>`
-    <div class="admin-item">
-      <img src="${p.img}">
-      <p>${p.nome}</p>
-      <span>R$ ${p.preco}</span>
-    </div>
-  `).join("");
+    area.innerHTML = "";
+
+    produtos.forEach(p => {
+        area.innerHTML += `
+            <div class="produto">
+                <img src="${p.imagem}">
+                <h3>${p.nome}</h3>
+                <p>R$ ${p.preco}</p>
+            </div>
+        `;
+    });
 }
-
-mostrarAdmin();
