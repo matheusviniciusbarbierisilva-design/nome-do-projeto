@@ -1,136 +1,103 @@
-ideal-store/
-│── index.html
-│── produtos.html
-│── carrinho.html
-│── login.html
-│── produto.html
-│── assets/
-│     ├── css/
-│     │     └── style.css
-│     ├── js/
-│     │     ├── main.js
-│     │     ├── produtos.js
-│     │     └── carrinho.js
-│     ├── img/
-│           └── (suas imagens + logo)
-body {
+ {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
     background: #111;
-    color: #fff;
-    font-family: "Poppins", sans-serif;
+    color: white;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 20px;
     background: #000;
     border-bottom: 2px solid #D4AF37;
 }
 
-.logo {
-    height: 60px;
+header .logo {
+    width: 140px;
 }
 
 nav a {
-    margin-left: 20px;
+    color: white;
+    margin: 0 10px;
     text-decoration: none;
-    color: #D4AF37;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #fff;
-}
-
-.banner {
-    text-align: center;
-    padding: 120px 20px;
-    background: linear-gradient(180deg, #000, #222);
-    border-bottom: 2px solid #D4AF37;
-}
-
-.banner h1 {
-    font-size: 42px;
     color: #D4AF37;
 }
 
 .titulo {
     text-align: center;
-    margin: 40px 0 20px;
-    font-size: 28px;
+    margin: 30px 0;
     color: #D4AF37;
+    font-size: 28px;
 }
 
-.grid {
+/* Slider */
+.slider {
+    max-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+/* Cards */
+#lista-produtos, #lista-destaques, #lista-promocoes {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    padding: 20px 40px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
 .card {
-    background: #1a1a1a;
-    padding: 20px;
+    background: #000;
+    border: 2px solid #D4AF37;
+    padding: 15px;
     border-radius: 10px;
-    border: 1px solid #333;
     text-align: center;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    border-color: #D4AF37;
+    transform: scale(1.05);
 }
 
 .card img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
-}
-
-.card h3 {
-    margin: 15px 0 10px;
 }
 
 .card button {
     width: 100%;
-    padding: 12px;
-    border: none;
-    background: #D4AF37;
-    color: #000;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.card button:hover {
-    background: #b8912f;
-}
-
-.login-box {
-    max-width: 350px;
-    margin: 120px auto;
-    padding: 30px;
-    background: #1a1a1a;
-    border-radius: 12px;
-    border: 1px solid #333;
-}
-
-.login-box input {
-    width: 100%;
-    margin: 10px 0;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-}
-
-.login-box button {
-    width: 100%;
-    padding: 12px;
+    padding: 10px;
     background: #D4AF37;
     border: none;
     font-weight: bold;
-    border-radius: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Responsivo */
+@media(max-width: 700px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 5px;
+    }
 }
