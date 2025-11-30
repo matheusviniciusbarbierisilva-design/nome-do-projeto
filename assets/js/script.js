@@ -1,40 +1,66 @@
 const produtos = [
-    { id: 1, nome: "Camisa Premium", preco: 129.90, img: "assets/img/p1.jpg" },
-    { id: 2, nome: "Moletom Luxo", preco: 249.90, img: "assets/img/p2.jpg" },
-    { id: 3, nome: "Relógio Gold", preco: 399.90, img: "assets/img/p3.jpg" },
+    {
+        id: 1,
+        nome: "Camiseta Premium Masculina",
+        preco: 89.90,
+        categoria: "masculino",
+        imagem: "assets/img/camisa1.jpg",
+        descricao: "Camiseta de algodão premium com estampa exclusiva."
+    },
+    {
+        id: 2,
+        nome: "Jaqueta Streetwear",
+        preco: 199.90,
+        categoria: "masculino",
+        imagem: "assets/img/jaqueta.jpg",
+        descricao: "Jaqueta moderna ideal para o frio."
+    },
+    {
+        id: 3,
+        nome: "Vestido Elegante Feminino",
+        preco: 149.90,
+        categoria: "feminino",
+        imagem: "assets/img/vestido.jpg",
+        descricao: "Vestido de luxo perfeito para eventos."
+    }
 ];
 function carregarProdutos() {
-    const area = document.getElementById("lista-produtos");
-    if (!area) return;
+    const lista = document.getElementById("lista-produtos");
+    if (!lista) return;
 
-    area.innerHTML = produtos.map(p => `
-        <div class="card">
-            <img src="${p.img}">
+    lista.innerHTML = produtos.map(p => `
+        <div class='card'>
+            <img src="${p.imagem}">
             <h3>${p.nome}</h3>
             <p>R$ ${p.preco.toFixed(2)}</p>
-            <a href="produto.html?id=${p.id}">
-                <button>Ver mais</button>
-            </a>
+            <button onclick="abrirProduto(${p.id})">Ver mais</button>
         </div>
     `).join("");
 }
 
-carregarProdutos();
-let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-
-function exibirCarrinho() {
-    const lista = document.getElementById("lista-carrinho");
-    const total = document.getElementById("total");
-
-    lista.innerHTML = carrinho.map(p => `
-        <div class="card">
-            <h3>${p.nome}</h3>
-            <p>R$ ${p.preco.toFixed(2)}</p>
-        </div>
-    `).join("");
-
-    const soma = carrinho.reduce((acc, p) => acc + p.preco, 0);
-    total.innerText = soma.toFixed(2);
+function abrirProduto(id) {
+    window.location.href = `produto.html?id=${id}`;
 }
 
-exibirCarrinho();
+function exibirProduto() {
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    const prod = produtos.find(p => p.id == id);
+
+    if (!prod) return;
+
+    document.getElementById("info-produto").innerHTML = `
+        <div class='produto-pagina'>
+            <img src="${prod.imagem}">
+            <div>
+                <h2>${prod.nome}</h2>
+                <p>${prod.descricao}</p>
+                <h3>R$ ${prod.preco.toFixed(2)}</h3>
+                <button onclick="adicionarCarrinho(${prod.id})">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    `;
+}
+function buscar() {
+    const q = document.getElementById("campo-busca").value.toLowerCase();
+    const filtrados = produto
